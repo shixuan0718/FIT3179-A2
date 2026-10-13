@@ -3,90 +3,122 @@
   "width": "container",
   "height": 330,
   "title": {
-    "text": "Household spending differs sharply by state",
-    "subtitle": "Mean monthly household expenditure, 2024 (RM)"
+    "text": "Household budgets vary sharply across Malaysia",
+    "subtitle": "Mean monthly household expenditure by state / federal territory, 2024"
   },
-  "data": {
-    "url": "https://raw.githubusercontent.com/dosm-malaysia/data-open/main/datasets/geodata/administrative_1_state.geojson"
-  },
-  "transform": [
-    {
-      "calculate": "toNumber(datum.properties.code_state)",
-      "as": "code_state_num"
-    },
-    {
-      "lookup": "code_state_num",
-      "from": {
-        "data": {
-          "url": "data/state_context_2024.csv"
-        },
-        "key": "code_state",
-        "fields": [
-          "state",
-          "expenditure_mean",
-          "income_mean",
-          "poverty"
-        ]
-      }
-    }
-  ],
   "projection": {
     "type": "mercator"
   },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#fffaf4",
-    "strokeWidth": 1
-  },
-  "encoding": {
-    "color": {
-      "field": "expenditure_mean",
-      "type": "quantitative",
-      "title": "RM / month",
-      "scale": {
-        "scheme": "orangered"
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/dosm-malaysia/data-open/main/datasets/geodata/administrative_1_state.geojson"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f1ebe4",
+        "stroke": "#c8bdb2",
+        "strokeWidth": 0.8
       }
     },
-    "tooltip": [
-      {
-        "field": "state",
-        "type": "nominal",
-        "title": "State"
+    {
+      "data": {
+        "url": "data/state_context_2024.csv"
       },
-      {
-        "field": "expenditure_mean",
-        "type": "quantitative",
-        "title": "Mean expenditure",
-        "format": ",.0f"
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "size": 260,
+        "opacity": 0.92,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
       },
-      {
-        "field": "income_mean",
-        "type": "quantitative",
-        "title": "Mean income",
-        "format": ",.0f"
-      },
-      {
-        "field": "poverty",
-        "type": "quantitative",
-        "title": "Poverty rate",
-        "format": ".1f"
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "expenditure_mean",
+          "type": "quantitative",
+          "title": "RM / month",
+          "scale": {
+            "scheme": "orangered"
+          },
+          "legend": {
+            "orient": "right",
+            "gradientLength": 150
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "expenditure_mean",
+            "type": "quantitative",
+            "title": "Mean expenditure (RM)",
+            "format": ",.0f"
+          },
+          {
+            "field": "income_mean",
+            "type": "quantitative",
+            "title": "Mean income (RM)",
+            "format": ",.0f"
+          },
+          {
+            "field": "poverty",
+            "type": "quantitative",
+            "title": "Poverty rate (%)",
+            "format": ".1f"
+          }
+        ]
       }
-    ]
-  },
+    },
+    {
+      "data": {
+        "url": "data/state_context_2024.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.state == 'W.P. Kuala Lumpur' || datum.state == 'W.P. Putrajaya' || datum.state == 'Sabah' || datum.state == 'Sarawak' || datum.state == 'Johor' || datum.state == 'Pulau Pinang'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 9,
+        "fontWeight": 700,
+        "dy": -11,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "tile_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
   "background": null,
   "config": {
     "font": "Inter",
     "view": {
       "stroke": null
-    },
-    "axis": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelColor": "#39332f",
-      "titleColor": "#39332f",
-      "gridColor": "#e9e1d8",
-      "domainColor": "#bcb1a7",
-      "tickColor": "#bcb1a7"
     },
     "legend": {
       "labelFont": "Inter",

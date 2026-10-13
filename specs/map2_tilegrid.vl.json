@@ -59,7 +59,7 @@
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 700,
         "color": "#2d2926"
       },
@@ -74,7 +74,7 @@
           "sort": "descending"
         },
         "text": {
-          "field": "state",
+          "field": "tile_label",
           "type": "nominal"
         }
       }
