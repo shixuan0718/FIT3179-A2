@@ -1,10 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 330,
   "title": {
-    "text": "Income does not translate equally into household outcomes",
-    "subtitle": "2024 state profiles; poverty and Gini axes are inverted so higher = stronger outcome"
+    "text": [
+      "Income does not guarantee",
+      "stronger household outcomes"
+    ],
+    "subtitle": "2024 state profiles · poverty and Gini are inverted (higher = stronger)"
   },
   "data": {
     "url": "data/hies_parallel_2024.csv"
@@ -31,17 +34,19 @@
   },
   "encoding": {
     "x": {
-      "field": "metric",
+      "field": "metric_short",
       "type": "ordinal",
       "sort": [
-        "Mean income (RM)",
-        "Mean expenditure (RM)",
-        "Poverty (%)",
+        "Income",
+        "Spending",
+        "Poverty",
         "Gini"
       ],
       "axis": {
         "title": null,
-        "labelAngle": 0
+        "labelAngle": 0,
+        "labelFontSize": 10,
+        "labelPadding": 8
       }
     },
     "y": {
@@ -54,7 +59,7 @@
         ]
       },
       "axis": {
-        "title": "Relative position (0\u20131)",
+        "title": "Relative position (0–1)",
         "labels": false,
         "ticks": false
       }
@@ -68,6 +73,12 @@
       "title": "Mean income (RM)",
       "scale": {
         "scheme": "goldred"
+      },
+      "legend": {
+        "orient": "top",
+        "direction": "horizontal",
+        "gradientLength": 120,
+        "title": "Mean income (RM)"
       }
     },
     "opacity": {
@@ -119,17 +130,31 @@
       "labelFont": "Inter",
       "titleFont": "Inter",
       "labelColor": "#39332f",
-      "titleColor": "#39332f"
+      "titleColor": "#39332f",
+      "labelFontSize": 10,
+      "titleFontSize": 11
     },
     "title": {
       "font": "DM Serif Display",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": "normal",
       "color": "#2d2926",
       "anchor": "start",
       "subtitleFont": "Inter",
       "subtitleColor": "#766b63",
-      "subtitleFontSize": 11
+      "subtitleFontSize": 10,
+      "offset": 8
     }
-  }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "transform": [
+    {
+      "calculate": "datum.metric === 'Mean income (RM)' ? 'Income' : datum.metric === 'Mean expenditure (RM)' ? 'Spending' : datum.metric === 'Poverty (%)' ? 'Poverty' : 'Gini'",
+      "as": "metric_short"
+    }
+  ]
 }

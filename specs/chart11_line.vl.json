@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 340,
   "title": {
     "text": "Clothing got cheaper relative to the rest of the basket",
-    "subtitle": "Unweighted average of 16 state/territory CPI series, Jan 2010\u2013Aug 2026"
+    "subtitle": "Unweighted average of 16 state/territory CPI series, Jan 2010–Aug 2026"
   },
   "data": {
     "url": "data/cpi_state_average.csv"
@@ -68,12 +68,12 @@
           {
             "date": "2026-08-01",
             "index": 134.375,
-            "label": "All-items \u2248 134"
+            "label": "All-items ≈ 134"
           },
           {
             "date": "2026-08-01",
             "index": 89.825,
-            "label": "Clothing \u2248 90"
+            "label": "Clothing ≈ 90"
           }
         ]
       },
@@ -120,17 +120,25 @@
       "labelFont": "Inter",
       "titleFont": "Inter",
       "labelColor": "#39332f",
-      "titleColor": "#39332f"
+      "titleColor": "#39332f",
+      "labelFontSize": 10,
+      "titleFontSize": 11
     },
     "title": {
       "font": "DM Serif Display",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": "normal",
       "color": "#2d2926",
       "anchor": "start",
       "subtitleFont": "Inter",
       "subtitleColor": "#766b63",
-      "subtitleFontSize": 11
+      "subtitleFontSize": 10,
+      "offset": 8
     }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
   }
 }

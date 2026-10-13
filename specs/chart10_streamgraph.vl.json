@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 330,
   "title": {
     "text": "Knitted apparel drives the long-run import mix",
-    "subtitle": "Malaysia imports by HS chapter, 2015\u20132025 (World total, USD billion)"
+    "subtitle": "Malaysia imports by HS chapter, 2015–2025 (World total, USD billion)"
   },
   "data": {
     "url": "data/trade_world_annual.csv"
@@ -84,17 +84,25 @@
       "labelFont": "Inter",
       "titleFont": "Inter",
       "labelColor": "#39332f",
-      "titleColor": "#39332f"
+      "titleColor": "#39332f",
+      "labelFontSize": 10,
+      "titleFontSize": 11
     },
     "title": {
       "font": "DM Serif Display",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": "normal",
       "color": "#2d2926",
       "anchor": "start",
       "subtitleFont": "Inter",
       "subtitleColor": "#766b63",
-      "subtitleFontSize": 11
+      "subtitleFontSize": 10,
+      "offset": 8
     }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
   }
 }

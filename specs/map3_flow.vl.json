@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 370,
+  "height": 340,
   "title": {
-    "text": "Malaysia\u2019s fashion supply chain is Asia-heavy",
+    "text": "Malaysia’s fashion supply chain is Asia-heavy",
     "subtitle": "Top 8 import origins for HS 61, 62 & 64, 2025"
   },
   "projection": {
@@ -158,17 +158,25 @@
       "labelFont": "Inter",
       "titleFont": "Inter",
       "labelColor": "#39332f",
-      "titleColor": "#39332f"
+      "titleColor": "#39332f",
+      "labelFontSize": 10,
+      "titleFontSize": 11
     },
     "title": {
       "font": "DM Serif Display",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": "normal",
       "color": "#2d2926",
       "anchor": "start",
       "subtitleFont": "Inter",
       "subtitleColor": "#766b63",
-      "subtitleFontSize": 11
+      "subtitleFontSize": 10,
+      "offset": 8
     }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
   }
 }

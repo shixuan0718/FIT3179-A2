@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 345,
   "title": {
-    "text": "China dominates the import side of Malaysia\u2019s fashion trade",
+    "text": "China dominates the import side of Malaysia’s fashion trade",
     "subtitle": "Top partners by total 2025 apparel & footwear trade (USD million)"
   },
   "data": {
@@ -48,7 +48,7 @@
     "x": {
       "field": "signed_value",
       "type": "quantitative",
-      "title": "\u2190 Imports     USD million     Exports \u2192",
+      "title": "← Imports     USD million     Exports →",
       "axis": {
         "format": ",.0f",
         "labelExpr": "abs(datum.value)"
@@ -105,17 +105,25 @@
       "labelFont": "Inter",
       "titleFont": "Inter",
       "labelColor": "#39332f",
-      "titleColor": "#39332f"
+      "titleColor": "#39332f",
+      "labelFontSize": 10,
+      "titleFontSize": 11
     },
     "title": {
       "font": "DM Serif Display",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": "normal",
       "color": "#2d2926",
       "anchor": "start",
       "subtitleFont": "Inter",
       "subtitleColor": "#766b63",
-      "subtitleFontSize": 11
+      "subtitleFontSize": 10,
+      "offset": 8
     }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
   }
 }

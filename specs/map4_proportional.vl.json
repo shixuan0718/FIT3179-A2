@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 330,
   "title": {
-    "text": "The manufacturing backdrop is concentrated on the west coast",
-    "subtitle": "All-manufacturing real GDP by state, 2025 \u2014 context, not textile-only output"
+    "text": "Manufacturing output clusters in the west",
+    "subtitle": "Real manufacturing GDP by state, 2025 · context only"
   },
   "projection": {
     "type": "mercator"
@@ -46,9 +46,14 @@
           "title": "RM billion",
           "scale": {
             "range": [
-              30,
-              2200
+              20,
+              1300
             ]
+          },
+          "legend": {
+            "orient": "right",
+            "title": "RM bn",
+            "symbolLimit": 5
           }
         },
         "tooltip": [
@@ -84,17 +89,25 @@
       "labelFont": "Inter",
       "titleFont": "Inter",
       "labelColor": "#39332f",
-      "titleColor": "#39332f"
+      "titleColor": "#39332f",
+      "labelFontSize": 10,
+      "titleFontSize": 11
     },
     "title": {
       "font": "DM Serif Display",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": "normal",
       "color": "#2d2926",
       "anchor": "start",
       "subtitleFont": "Inter",
       "subtitleColor": "#766b63",
-      "subtitleFontSize": 11
+      "subtitleFontSize": 10,
+      "offset": 8
     }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
   }
 }

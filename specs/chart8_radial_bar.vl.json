@@ -1,65 +1,62 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 410,
-  "height": 410,
+  "width": "container",
+  "height": 330,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
   "title": {
     "text": "Year-end shopping is the clearest seasonal lift",
-    "subtitle": "MSIC 477 sales, monthly level vs each year\u2019s average, mean of 2023\u20132025"
-  },
-  "data": {
-    "url": "data/retail_477_seasonality.csv"
+    "subtitle": "MSIC 477 sales relative to each year’s average · mean of 2023–2025"
   },
   "layer": [
     {
+      "data": {
+        "values": [
+          {
+            "month_name": "Jan",
+            "index": 97.90708343586162,
+            "delta_pct": -2.0929165641383776,
+            "start": -1.5457963267948966,
+            "end": -1.0721975511965978
+          }
+        ]
+      },
       "mark": {
         "type": "arc",
-        "innerRadius": 75,
+        "innerRadius": 58,
+        "outerRadius": 83.3,
+        "cornerRadius": 3,
         "stroke": "#fffaf4",
-        "strokeWidth": 2,
-        "cornerRadius": 4
+        "strokeWidth": 1.5
       },
       "encoding": {
         "theta": {
-          "field": "month_name",
-          "type": "ordinal",
-          "sort": [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"
-          ]
-        },
-        "radius": {
-          "field": "index",
+          "field": "start",
           "type": "quantitative",
-          "scale": {
-            "domain": [
-              90,
-              108
-            ],
-            "range": [
-              80,
-              190
-            ]
-          },
-          "title": "Index"
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
         },
         "color": {
           "field": "delta_pct",
           "type": "quantitative",
-          "title": "vs annual avg (%)",
           "scale": {
-            "scheme": "redyellowgreen",
-            "domainMid": 0
-          }
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
         },
         "tooltip": [
           {
@@ -73,10 +70,788 @@
           },
           {
             "field": "delta_pct",
-            "title": "vs annual average",
+            "title": "vs annual average (%)",
             "format": "+.1f"
           }
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Feb",
+            "index": 96.70947684388169,
+            "delta_pct": -3.2905231561183115,
+            "start": -1.022197551196598,
+            "end": -0.548598775598299
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 82,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Mar",
+            "index": 98.6133429146414,
+            "delta_pct": -1.3866570853586069,
+            "start": -0.4985987755982989,
+            "end": -0.025
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 88.9,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Apr",
+            "index": 100.06453526135077,
+            "delta_pct": 0.0645352613507697,
+            "start": 0.025,
+            "end": 0.4985987755982987
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 100.5,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "May",
+            "index": 98.1411052308426,
+            "delta_pct": -1.858894769157402,
+            "start": 0.5485987755982987,
+            "end": 1.022197551196598
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 85.1,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Jun",
+            "index": 99.59705313007787,
+            "delta_pct": -0.4029468699221326,
+            "start": 1.0721975511965978,
+            "end": 1.5457963267948966
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 96.8,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Jul",
+            "index": 98.08219546545449,
+            "delta_pct": -1.9178045345455104,
+            "start": 1.5957963267948965,
+            "end": 2.0693951023931954
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 84.7,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Aug",
+            "index": 99.43703917351122,
+            "delta_pct": -0.5629608264887764,
+            "start": 2.119395102393195,
+            "end": 2.592993877991494
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 95.5,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Sep",
+            "index": 100.99532274259509,
+            "delta_pct": 0.9953227425950928,
+            "start": 2.642993877991494,
+            "end": 3.116592653589793
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 108.0,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Oct",
+            "index": 101.42746074953395,
+            "delta_pct": 1.4274607495339495,
+            "start": 3.166592653589793,
+            "end": 3.6401914291880924
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 111.4,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Nov",
+            "index": 103.18999454632585,
+            "delta_pct": 3.189994546325849,
+            "start": 3.690191429188092,
+            "end": 4.16379020478639
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 125.5,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Dec",
+            "index": 105.83539050592351,
+            "delta_pct": 5.835390505923513,
+            "start": 4.213790204786391,
+            "end": 4.687388980384689
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 58,
+        "outerRadius": 146.7,
+        "cornerRadius": 3,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "end"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              6
+            ],
+            "range": [
+              "#315c55",
+              "#f3df95",
+              "#a91f35"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "Jan",
+            "angle": -1.3089969389957472
+          },
+          {
+            "month_name": "Feb",
+            "angle": -0.7853981633974483
+          },
+          {
+            "month_name": "Mar",
+            "angle": -0.26179938779914935
+          },
+          {
+            "month_name": "Apr",
+            "angle": 0.26179938779914935
+          },
+          {
+            "month_name": "May",
+            "angle": 0.7853981633974483
+          },
+          {
+            "month_name": "Jun",
+            "angle": 1.308996938995747
+          },
+          {
+            "month_name": "Jul",
+            "angle": 1.8325957145940461
+          },
+          {
+            "month_name": "Aug",
+            "angle": 2.3561944901923444
+          },
+          {
+            "month_name": "Sep",
+            "angle": 2.879793265790644
+          },
+          {
+            "month_name": "Oct",
+            "angle": 3.4033920413889422
+          },
+          {
+            "month_name": "Nov",
+            "angle": 3.9269908169872414
+          },
+          {
+            "month_name": "Dec",
+            "angle": 4.45058959258554
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "color": "#5c534d"
+      },
+      "encoding": {
+        "theta": {
+          "field": "angle",
+          "type": "quantitative",
+          "scale": null
+        },
+        "radius": {
+          "value": 160
+        },
+        "text": {
+          "field": "month_name"
+        }
       }
     },
     {
@@ -90,7 +865,7 @@
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 12,
+        "fontSize": 11,
         "fontWeight": 700,
         "color": "#5c534d"
       },
@@ -107,15 +882,6 @@
     "view": {
       "stroke": null
     },
-    "axis": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelColor": "#39332f",
-      "titleColor": "#39332f",
-      "gridColor": "#e9e1d8",
-      "domainColor": "#bcb1a7",
-      "tickColor": "#bcb1a7"
-    },
     "legend": {
       "labelFont": "Inter",
       "titleFont": "Inter",
@@ -124,13 +890,14 @@
     },
     "title": {
       "font": "DM Serif Display",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": "normal",
       "color": "#2d2926",
       "anchor": "start",
       "subtitleFont": "Inter",
       "subtitleColor": "#766b63",
-      "subtitleFontSize": 11
+      "subtitleFontSize": 10,
+      "offset": 8
     }
   }
 }
