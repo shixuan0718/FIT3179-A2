@@ -4,7 +4,7 @@
   "height": 330,
   "title": {
     "text": "Manufacturing output clusters in the west",
-    "subtitle": "Real manufacturing GDP by state, 2025 · context only"
+    "subtitle": "Real manufacturing GDP by state, 2025 \u00b7 context only"
   },
   "projection": {
     "type": "mercator"
@@ -51,9 +51,12 @@
             ]
           },
           "legend": {
-            "orient": "right",
-            "title": "RM bn",
-            "symbolLimit": 5
+            "orient": "bottom",
+            "direction": "horizontal",
+            "title": "Manufacturing GDP (RM bn)",
+            "symbolLimit": 5,
+            "columns": 5,
+            "offset": 8
           }
         },
         "tooltip": [

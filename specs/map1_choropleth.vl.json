@@ -50,8 +50,13 @@
             "scheme": "orangered"
           },
           "legend": {
-            "orient": "right",
-            "gradientLength": 150
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 180,
+            "gradientThickness": 10,
+            "title": "RM / month",
+            "titleOrient": "left",
+            "offset": 8
           }
         },
         "tooltip": [

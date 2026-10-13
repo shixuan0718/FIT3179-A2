@@ -4,7 +4,7 @@
   "height": 340,
   "title": {
     "text": "Clothing got cheaper relative to the rest of the basket",
-    "subtitle": "Unweighted average of 16 state/territory CPI series, Jan 2010–Aug 2026"
+    "subtitle": "Unweighted average of 16 state/territory CPI series, Jan 2010\u2013Aug 2026"
   },
   "data": {
     "url": "data/cpi_state_average.csv"
@@ -68,12 +68,7 @@
           {
             "date": "2026-08-01",
             "index": 134.375,
-            "label": "All-items ≈ 134"
-          },
-          {
-            "date": "2026-08-01",
-            "index": 89.825,
-            "label": "Clothing ≈ 90"
+            "label": "All-items \u2248 134"
           }
         ]
       },
@@ -81,10 +76,45 @@
         "type": "text",
         "align": "right",
         "dx": -6,
+        "dy": -10,
         "font": "Inter",
         "fontSize": 11,
         "fontWeight": 700,
-        "color": "#2d2926"
+        "color": "#315c55"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "date": "2026-08-01",
+            "index": 89.825,
+            "label": "Clothing \u2248 90"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -6,
+        "dy": 12,
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#7a2430"
       },
       "encoding": {
         "x": {
