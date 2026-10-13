@@ -1,0 +1,136 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 410,
+  "height": 410,
+  "title": {
+    "text": "Year-end shopping is the clearest seasonal lift",
+    "subtitle": "MSIC 477 sales, monthly level vs each year\u2019s average, mean of 2023\u20132025"
+  },
+  "data": {
+    "url": "data/retail_477_seasonality.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 75,
+        "stroke": "#fffaf4",
+        "strokeWidth": 2,
+        "cornerRadius": 4
+      },
+      "encoding": {
+        "theta": {
+          "field": "month_name",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "radius": {
+          "field": "index",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              90,
+              108
+            ],
+            "range": [
+              80,
+              190
+            ]
+          },
+          "title": "Index"
+        },
+        "color": {
+          "field": "delta_pct",
+          "type": "quantitative",
+          "title": "vs annual avg (%)",
+          "scale": {
+            "scheme": "redyellowgreen",
+            "domainMid": 0
+          }
+        },
+        "tooltip": [
+          {
+            "field": "month_name",
+            "title": "Month"
+          },
+          {
+            "field": "index",
+            "title": "Seasonal index",
+            "format": ".1f"
+          },
+          {
+            "field": "delta_pct",
+            "title": "vs annual average",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "t": "100 = yearly avg"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#5c534d"
+      },
+      "encoding": {
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ],
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f"
+    },
+    "title": {
+      "font": "DM Serif Display",
+      "fontSize": 20,
+      "fontWeight": "normal",
+      "color": "#2d2926",
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleColor": "#766b63",
+      "subtitleFontSize": 11
+    }
+  }
+}

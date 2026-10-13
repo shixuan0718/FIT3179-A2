@@ -1,0 +1,121 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 360,
+  "title": {
+    "text": "China dominates the import side of Malaysia\u2019s fashion trade",
+    "subtitle": "Top partners by total 2025 apparel & footwear trade (USD million)"
+  },
+  "data": {
+    "url": "data/trade_balance_2025.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "export_mil",
+        "import_mil"
+      ],
+      "as": [
+        "direction",
+        "value"
+      ]
+    },
+    {
+      "calculate": "datum.direction === 'import_mil' ? -datum.value : datum.value",
+      "as": "signed_value"
+    },
+    {
+      "calculate": "datum.direction === 'import_mil' ? 'Imports' : 'Exports'",
+      "as": "flow"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "y": {
+      "field": "partnerDesc",
+      "type": "nominal",
+      "sort": {
+        "field": "total",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null
+      }
+    },
+    "x": {
+      "field": "signed_value",
+      "type": "quantitative",
+      "title": "\u2190 Imports     USD million     Exports \u2192",
+      "axis": {
+        "format": ",.0f",
+        "labelExpr": "abs(datum.value)"
+      }
+    },
+    "color": {
+      "field": "flow",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Imports",
+          "Exports"
+        ],
+        "range": [
+          "#b66a3c",
+          "#315c55"
+        ]
+      },
+      "legend": {
+        "orient": "top"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "partnerDesc",
+        "title": "Partner"
+      },
+      {
+        "field": "flow"
+      },
+      {
+        "field": "value",
+        "title": "USD million",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f"
+    },
+    "title": {
+      "font": "DM Serif Display",
+      "fontSize": 20,
+      "fontWeight": "normal",
+      "color": "#2d2926",
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleColor": "#766b63",
+      "subtitleFontSize": 11
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 370,
+  "title": {
+    "text": "Malaysia\u2019s fashion supply chain is Asia-heavy",
+    "subtitle": "Top 8 import origins for HS 61, 62 & 64, 2025"
+  },
+  "projection": {
+    "type": "equalEarth",
+    "center": [
+      90,
+      12
+    ],
+    "scale": 235
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eee7df",
+        "stroke": "#d0c6bc",
+        "strokeWidth": 0.4
+      }
+    },
+    {
+      "data": {
+        "url": "data/trade_routes_import_2025.csv"
+      },
+      "mark": {
+        "type": "line",
+        "stroke": "#7a2430",
+        "opacity": 0.52,
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "partner"
+        },
+        "order": {
+          "field": "step"
+        },
+        "strokeWidth": {
+          "field": "value_mil",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              1,
+              8
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "partner",
+            "title": "Origin"
+          },
+          {
+            "field": "value_mil",
+            "title": "Imports (USD m)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Malaysia",
+            "lon": 101.98,
+            "lat": 4.21
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 120,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon"
+        },
+        "latitude": {
+          "field": "lat"
+        },
+        "tooltip": [
+          {
+            "field": "name"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "label": "MALAYSIA",
+            "lon": 104.0,
+            "lat": 3.4
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontWeight": 800,
+        "fontSize": 10,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon"
+        },
+        "latitude": {
+          "field": "lat"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f"
+    },
+    "title": {
+      "font": "DM Serif Display",
+      "fontSize": 20,
+      "fontWeight": "normal",
+      "color": "#2d2926",
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleColor": "#766b63",
+      "subtitleFontSize": 11
+    }
+  }
+}
