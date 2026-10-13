@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stitched Economy — Fashion & Clothing in Malaysia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="hero">
+  <div class="hero-kicker">FIT3179 · DATA VISUALISATION II · MONASH MALAYSIA</div>
+  <h1>Stitched Economy</h1>
+  <p class="hero-sub">What Malaysia’s household budgets, trade flows, retail rhythms and prices reveal about the clothes we buy.</p>
+  <div class="hero-stats">
+    <div><b>16</b><span>states & territories</span></div>
+    <div><b>2010–26</b><span>price history</span></div>
+    <div><b>2015–25</b><span>fashion trade</span></div>
+    <div><b>11</b><span>visualisations</span></div>
+  </div>
+  <p class="lede">Fashion feels personal, but the system behind it is economic: household purchasing power differs sharply across Malaysia, imports are concentrated in a handful of Asian partners, and clothing prices have moved in the opposite direction from the wider cost of living.</p>
+</header>
+<main>
+<section class="section intro-section" id="s1">
+  <div class="section-heading"><span>01</span><div><p>THE MACRO VIEW</p><h2>Where can Malaysians afford to spend?</h2></div></div>
+  <p class="section-copy">Household expenditure is not the same as fashion spending, but it sets the budget context in which clothing purchases happen. The maps below keep that distinction explicit.</p>
+  <div class="grid two">
+    <article class="card"><div id="map1" class="vis"></div><p class="annotation"><b>Read this first:</b> Putrajaya and Kuala Lumpur sit at the top of household expenditure, while lower-spending states face tighter discretionary budgets.</p></article>
+    <article class="card"><div id="map2" class="vis"></div><p class="annotation"><b>Uneven pressure:</b> Sabah’s 2024 poverty rate is far above the lowest-rate federal territories, showing why a single “Malaysian consumer” is too simple.</p></article>
+  </div>
+  <div class="grid two">
+    <article class="card"><div id="map3" class="vis"></div><p class="annotation"><b>Supply chain:</b> China and Viet Nam dominate the largest import routes; the flow map encodes value in line thickness.</p></article>
+    <article class="card"><div id="map4" class="vis"></div><p class="annotation"><b>Important limitation:</b> this is <em>all manufacturing GDP</em>, not textile-only output. It is used only as a backdrop for industrial capacity, avoiding a fabricated “textile hub” claim.</p></article>
+  </div>
+</section>
+<section class="section" id="s2">
+  <div class="section-heading"><span>02</span><div><p>THE ECONOMICS OF FASHION</p><h2>Who supplies Malaysia — and who buys from it?</h2></div></div>
+  <div class="grid two unequal">
+    <article class="card"><h3>2025 import composition</h3><div id="chart5" class="vis"></div><p class="annotation"><b>Concentration matters:</b> partner-country blocks make clear that “fashion imports” are not one market; knitted apparel, woven apparel and footwear each have different supply patterns.</p></article>
+    <article class="card"><div id="chart6" class="vis"></div><p class="annotation"><b>Hover a state</b> to trace its whole profile. High income often travels with high expenditure, but poverty and inequality still separate state experiences.</p></article>
+  </div>
+  <article class="card wide"><div id="chart7" class="vis"></div><p class="annotation"><b>Trade asymmetry:</b> China sits heavily on the import side, while the United States and Singapore are more important export destinations.</p></article>
+</section>
+<section class="section" id="s3">
+  <div class="section-heading"><span>03</span><div><p>RHYTHMS & SHIFTS</p><h2>Fashion demand is seasonal — but less dramatically than the sketch assumed</h2></div></div>
+  <p class="section-copy">The data does not support a large Hari Raya spike in the broad retail proxy. Rather than force the original story, the visualisation shows the stronger and more defensible year-end pattern.</p>
+  <div class="grid two">
+    <article class="card center"><div id="chart8" class="vis radial"></div><p class="annotation"><b>December stands out:</b> MSIC 477 sales average about 5.8% above each year’s mean in 2023–2025. Group 477 is a broad specialised-store proxy and includes more than fashion.</p></article>
+    <article class="card"><div id="chart9" class="vis"></div><p class="annotation"><b>Cooling prices:</b> the heatmap shows annual average clothing inflation by state. Red and blue deviations matter more than small month-to-month noise.</p></article>
+  </div>
+  <article class="card wide"><div id="chart10" class="vis"></div><p class="annotation"><b>2025 step-up:</b> import values rise across all three fashion chapters, with knitted apparel remaining the largest component.</p></article>
+</section>
+<section class="section finale" id="s4">
+  <div class="section-heading"><span>04</span><div><p>THE PRICE STORY</p><h2>The surprising part: clothing did not follow Malaysia’s wider inflation path</h2></div></div>
+  <article class="card hero-card"><div id="chart11" class="vis"></div><div class="takeaway"><span>KEY TAKEAWAY</span><p>Across the 16 state and territory series, the clothing-and-footwear index averages about <b>90</b> in Aug 2026, while the all-items index averages about <b>134</b>. In other words, clothing prices have fallen relative to 2010 while the broader basket became much more expensive.</p></div></article>
+</section>
+<section class="method">
+  <h2>How to read this visualisation</h2>
+  <div class="method-grid"><div><b>Who</b><p>Designed for the average Malaysian reader, with plain-language labels and no assumed statistical background.</p></div><div><b>What</b><p>OpenDOSM household, CPI, retail and GDP data combined with UN Comtrade HS 61, 62 and 64 trade data.</p></div><div><b>Why</b><p>To show how affordability, supply chains, retail seasonality and price change shape Malaysia’s fashion economy.</p></div><div><b>How</b><p>Maps establish geography; treemap and flows show composition; parallel coordinates compare states; radial, heatmap, streamgraph and line charts reveal temporal patterns.</p></div></div>
+</section>
+</main>
+<footer>
+  <div><b>Author:</b> Shi Xuan · 2026</div>
+  <div><b>Data:</b> Department of Statistics Malaysia / OpenDOSM; UN Comtrade. Map boundary: DOSM Open Data GitHub. Fonts: Google Fonts.</div>
+  <div><b>Notes:</b> HIES 2024 household expenditure is total expenditure, not apparel-only. MSIC 477 is a broad specialised-store retail group. Manufacturing GDP is economy-wide manufacturing, not textile-specific. CPI summaries are unweighted averages across 16 state/territory series.</div>
+  <div><b>AI acknowledgement:</b> Generative AI was used to assist with data checking, Vega/Vega-Lite code, copy-editing and layout iteration; final claims were checked against the supplied datasets.</div>
+</footer>
+<script src="main.js"></script>
+</body></html>

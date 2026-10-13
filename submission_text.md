@@ -1,0 +1,13 @@
+# Part B — Draft wording for the assignment template
+
+## Domain
+My assigned domain is **Fashion and Clothing in Malaysia**. The visualisation examines the economic system behind everyday clothing consumption by connecting household affordability, international apparel and footwear trade, retail seasonality, manufacturing context and clothing prices.
+
+## Why and Who
+The visualisation is designed for the **average Malaysian reader**. Its purpose is to show that fashion is not only about style: where people live affects household purchasing power, the clothes sold in Malaysia are connected to concentrated international supply chains, retail activity changes through the year, and clothing prices have behaved differently from the wider cost of living. The story uses plain-language annotations and tooltips so that readers do not need specialist knowledge of economics or statistics.
+
+## What
+The visualisation combines multiple real-world sources. OpenDOSM / Department of Statistics Malaysia data is used for the 2024 Household Income and Expenditure Survey indicators by state, monthly state-level Consumer Price Index data, wholesale and retail trade data, and 2025 real GDP by state and economic sector. UN Comtrade data is used for Malaysia's annual imports and exports of HS 61 (knitted apparel), HS 62 (woven apparel) and HS 64 (footwear) from 2015 to 2025. Malaysia state boundaries are loaded from the DOSM open-data repository. The datasets were filtered and aggregated for presentation; analytical values were not fabricated. Important limitations are stated directly in the visualisation: HIES expenditure is total household expenditure rather than apparel-only spending, MSIC 477 is a broad specialised-store retail group, and manufacturing GDP is not textile-specific.
+
+## How
+The page is structured as a four-part story. The first section uses a choropleth, a state tile-grid cartogram, a global flow map and a proportional-symbol map to establish geographic context. The second section uses a treemap to show the composition of 2025 imports, parallel coordinates to compare state household profiles, and a diverging bar chart to contrast imports and exports by major partner. The third section uses a radial bar chart, heatmap and streamgraph to reveal retail seasonality, state inflation differences and changes in import composition over time. The final line chart contrasts clothing-and-footwear CPI with the all-items CPI. These idioms were chosen because they match the tasks: maps answer "where", composition charts answer "what makes up the total", and temporal charts answer "how has it changed". Hover tooltips provide detail while annotations keep the page presentation-led rather than turning it into an expert exploration tool.
