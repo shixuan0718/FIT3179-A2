@@ -1,0 +1,65 @@
+state,metric,metric_order,raw,normalized,income_mean
+Johor,Mean income (RM),0,9484.0,0.4838302752293578,9484
+Johor,Mean expenditure (RM),1,5927.0,0.42206064905125024,9484
+Johor,Poverty (%),2,2.5,0.8685714285714285,9484
+Johor,Gini,3,0.348,0.4014084507042257,9484
+Kedah,Mean income (RM),0,5793.0,0.060550458715596334,5793
+Kedah,Mean expenditure (RM),1,4028.0,0.08529881184607199,5793
+Kedah,Poverty (%),2,8.4,0.5314285714285714,5793
+Kedah,Gini,3,0.334,0.5,5793
+Kelantan,Mean income (RM),0,5265.0,0.0,5265
+Kelantan,Mean expenditure (RM),1,3825.0,0.049299521191700654,5265
+Kelantan,Poverty (%),2,11.5,0.3542857142857142,5265
+Kelantan,Gini,3,0.356,0.3450704225352116,5265
+Melaka,Mean income (RM),0,8686.0,0.39231651376146787,8686
+Melaka,Mean expenditure (RM),1,6212.0,0.4726015250931016,8686
+Melaka,Poverty (%),2,3.0,0.84,8686
+Melaka,Gini,3,0.337,0.47887323943661975,8686
+Negeri Sembilan,Mean income (RM),0,7305.0,0.23394495412844038,7305
+Negeri Sembilan,Mean expenditure (RM),1,5115.0,0.27806348643376483,7305
+Negeri Sembilan,Poverty (%),2,4.0,0.7828571428571429,7305
+Negeri Sembilan,Gini,3,0.343,0.43661971830985913,7305
+Pahang,Mean income (RM),0,6066.0,0.09185779816513762,6066
+Pahang,Mean expenditure (RM),1,4368.0,0.14559319028196488,6066
+Pahang,Poverty (%),2,5.9,0.6742857142857143,6066
+Pahang,Gini,3,0.319,0.6056338028169015,6066
+Pulau Pinang,Mean income (RM),0,9152.0,0.4457568807339449,9152
+Pulau Pinang,Mean expenditure (RM),1,5850.0,0.40840574569959215,9152
+Pulau Pinang,Poverty (%),2,1.9,0.9028571428571428,9152
+Pulau Pinang,Gini,3,0.311,0.6619718309859156,9152
+Perak,Mean income (RM),0,6173.0,0.10412844036697248,6173
+Perak,Mean expenditure (RM),1,4232.0,0.12147543890760773,6173
+Perak,Poverty (%),2,6.9,0.6171428571428572,6173
+Perak,Gini,3,0.298,0.7535211267605636,6173
+Perlis,Mean income (RM),0,5996.0,0.08383027522935779,5996
+Perlis,Mean expenditure (RM),1,4084.0,0.09522965064727788,5996
+Perlis,Poverty (%),2,3.6,0.8057142857142857,5996
+Perlis,Gini,3,0.334,0.5,5996
+Selangor,Mean income (RM),0,13296.0,0.9209862385321101,13296
+Selangor,Mean expenditure (RM),1,7266.0,0.6595140982443696,13296
+Selangor,Poverty (%),2,0.9,0.96,13296
+Selangor,Gini,3,0.332,0.5140845070422535,13296
+Terengganu,Mean income (RM),0,7627.0,0.2708715596330275,7627
+Terengganu,Mean expenditure (RM),1,5219.0,0.2965064727788615,7627
+Terengganu,Poverty (%),2,5.8,0.6799999999999999,7627
+Terengganu,Gini,3,0.263,1.0,7627
+Sabah,Mean income (RM),0,6498.0,0.14139908256880734,6498
+Sabah,Mean expenditure (RM),1,3547.0,0.0,6498
+Sabah,Poverty (%),2,17.7,0.0,6498
+Sabah,Gini,3,0.405,0.0,6498
+Sarawak,Mean income (RM),0,6947.0,0.19288990825688074,6947
+Sarawak,Mean expenditure (RM),1,4281.0,0.13016492285866288,6947
+Sarawak,Poverty (%),2,8.4,0.5314285714285714,6947
+Sarawak,Gini,3,0.361,0.3098591549295777,6947
+W.P. Kuala Lumpur,Mean income (RM),0,13985.0,1.0,13985
+W.P. Kuala Lumpur,Mean expenditure (RM),1,8178.0,0.821244901578294,13985
+W.P. Kuala Lumpur,Poverty (%),2,1.0,0.9542857142857143,13985
+W.P. Kuala Lumpur,Gini,3,0.375,0.21126760563380298,13985
+W.P. Labuan,Mean income (RM),0,8555.0,0.37729357798165136,8555
+W.P. Labuan,Mean expenditure (RM),1,4497.0,0.1684695868061713,8555
+W.P. Labuan,Poverty (%),2,2.0,0.8971428571428571,8555
+W.P. Labuan,Gini,3,0.327,0.5492957746478874,8555
+W.P. Putrajaya,Mean income (RM),0,13846.0,0.984059633027523,13846
+W.P. Putrajaya,Mean expenditure (RM),1,9186.0,1.0,13846
+W.P. Putrajaya,Poverty (%),2,0.2,1.0,13846
+W.P. Putrajaya,Gini,3,0.324,0.5704225352112677,13846

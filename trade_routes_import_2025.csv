@@ -1,0 +1,17 @@
+partner,rank,value_mil,step,lat,lon,label
+China,1,1183.396139895,0,35.86,104.2,China
+China,1,1183.396139895,1,4.21,101.98,Malaysia
+Viet Nam,2,493.336847781,0,14.06,108.28,Viet Nam
+Viet Nam,2,493.336847781,1,4.21,101.98,Malaysia
+Singapore,3,381.248977928,0,1.35,103.82,Singapore
+Singapore,3,381.248977928,1,4.21,101.98,Malaysia
+Bangladesh,4,355.63904600700005,0,23.69,90.36,Bangladesh
+Bangladesh,4,355.63904600700005,1,4.21,101.98,Malaysia
+Indonesia,5,196.42647871,0,-0.79,113.92,Indonesia
+Indonesia,5,196.42647871,1,4.21,101.98,Malaysia
+India,6,169.948222273,0,20.59,78.96,India
+India,6,169.948222273,1,4.21,101.98,Malaysia
+Cambodia,7,88.458935153,0,12.57,104.99,Cambodia
+Cambodia,7,88.458935153,1,4.21,101.98,Malaysia
+Italy,8,78.81458828,0,41.87,12.57,Italy
+Italy,8,78.81458828,1,4.21,101.98,Malaysia
