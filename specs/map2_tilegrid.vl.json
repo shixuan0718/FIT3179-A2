@@ -3,11 +3,11 @@
   "width": "container",
   "height": 310,
   "title": {
-    "text": "A tile-grid reveals the affordability divide",
-    "subtitle": "Poverty rate by state / federal territory, 2024"
+    "text": "Clothing price pressure differs across Malaysia",
+    "subtitle": "Average year-on-year clothing & footwear inflation, Jan–Aug 2026"
   },
   "data": {
-    "url": "data/state_context_2024.csv"
+    "url": "data/state_clothing_inflation_2026.csv"
   },
   "layer": [
     {
@@ -30,11 +30,24 @@
           "sort": "descending"
         },
         "color": {
-          "field": "poverty",
+          "field": "inflation_yoy",
           "type": "quantitative",
-          "title": "Poverty %",
+          "title": "YoY %",
           "scale": {
-            "scheme": "orangered"
+            "domain": [
+              -3.2,
+              0,
+              1.7
+            ],
+            "range": [
+              "#2d6a9f",
+              "#f6efe7",
+              "#b21f35"
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "gradientLength": 150
           }
         },
         "tooltip": [
@@ -43,14 +56,9 @@
             "title": "State"
           },
           {
-            "field": "poverty",
-            "title": "Poverty %",
-            "format": ".1f"
-          },
-          {
-            "field": "income_mean",
-            "title": "Mean income (RM)",
-            "format": ",.0f"
+            "field": "inflation_yoy",
+            "title": "Avg YoY %",
+            "format": "+.1f"
           }
         ]
       }
@@ -60,8 +68,7 @@
         "type": "text",
         "font": "Inter",
         "fontSize": 9,
-        "fontWeight": 700,
-        "color": "#2d2926"
+        "fontWeight": 700
       },
       "encoding": {
         "x": {
@@ -76,6 +83,13 @@
         "text": {
           "field": "tile_label",
           "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.inflation_yoy <= -2 || datum.inflation_yoy >= 1.2",
+            "value": "#fffaf4"
+          },
+          "value": "#2d2926"
         }
       }
     }

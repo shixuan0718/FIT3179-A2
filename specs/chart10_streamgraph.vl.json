@@ -3,8 +3,8 @@
   "width": "container",
   "height": 330,
   "title": {
-    "text": "Knitted apparel drives the long-run import mix",
-    "subtitle": "Malaysia imports by HS chapter, 2015–2025 (World total, USD billion)"
+    "text": "Malaysia’s fashion product mix has shifted over time",
+    "subtitle": "Imports by HS chapter, 2015–2025 · market availability proxy, USD billion"
   },
   "data": {
     "url": "data/trade_world_annual.csv"

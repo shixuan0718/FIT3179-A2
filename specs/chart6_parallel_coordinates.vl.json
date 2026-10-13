@@ -3,14 +3,11 @@
   "width": "container",
   "height": 330,
   "title": {
-    "text": [
-      "Income does not guarantee",
-      "stronger household outcomes"
-    ],
-    "subtitle": "2024 state profiles · poverty and Gini are inverted (higher = stronger)"
+    "text": "Suppliers specialise in different fashion categories",
+    "subtitle": "Top 8 suppliers, 2025 · category axes show each partner’s mix; volume is relative"
   },
   "data": {
-    "url": "data/hies_parallel_2024.csv"
+    "url": "data/trade_partner_profiles_2025.csv"
   },
   "params": [
     {
@@ -18,7 +15,7 @@
       "select": {
         "type": "point",
         "fields": [
-          "state"
+          "partner"
         ],
         "on": "pointerover",
         "clear": "pointerout"
@@ -29,18 +26,18 @@
     "type": "line",
     "point": {
       "filled": true,
-      "size": 22
+      "size": 24
     }
   },
   "encoding": {
     "x": {
-      "field": "metric_short",
+      "field": "metric",
       "type": "ordinal",
       "sort": [
-        "Income",
-        "Spending",
-        "Poverty",
-        "Gini"
+        "Knitted",
+        "Woven",
+        "Footwear",
+        "Volume"
       ],
       "axis": {
         "title": null,
@@ -59,18 +56,18 @@
         ]
       },
       "axis": {
-        "title": "Relative position (0–1)",
+        "title": "Relative profile (0–1)",
         "labels": false,
         "ticks": false
       }
     },
     "detail": {
-      "field": "state"
+      "field": "partner"
     },
     "color": {
-      "field": "income_mean",
+      "field": "total_mil",
       "type": "quantitative",
-      "title": "Mean income (RM)",
+      "title": "Total imports (USD m)",
       "scale": {
         "scheme": "goldred"
       },
@@ -78,7 +75,7 @@
         "orient": "top",
         "direction": "horizontal",
         "gradientLength": 120,
-        "title": "Mean income (RM)"
+        "title": "Total imports (USD m)"
       }
     },
     "opacity": {
@@ -86,28 +83,32 @@
         "param": "hover",
         "value": 1
       },
-      "value": 0.28
+      "value": 0.34
     },
     "strokeWidth": {
       "condition": {
         "param": "hover",
         "value": 3
       },
-      "value": 1.1
+      "value": 1.2
     },
     "tooltip": [
       {
-        "field": "state",
-        "title": "State"
+        "field": "partner",
+        "title": "Supplier"
       },
       {
         "field": "metric",
-        "title": "Metric"
+        "title": "Axis"
       },
       {
         "field": "raw",
         "title": "Value",
-        "format": ",.2f"
+        "format": ".1f"
+      },
+      {
+        "field": "unit",
+        "title": "Unit"
       }
     ]
   },
@@ -150,11 +151,5 @@
     "type": "fit",
     "contains": "padding",
     "resize": true
-  },
-  "transform": [
-    {
-      "calculate": "datum.metric === 'Mean income (RM)' ? 'Income' : datum.metric === 'Mean expenditure (RM)' ? 'Spending' : datum.metric === 'Poverty (%)' ? 'Poverty' : 'Gini'",
-      "as": "metric_short"
-    }
-  ]
+  }
 }

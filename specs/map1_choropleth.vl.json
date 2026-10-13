@@ -3,8 +3,8 @@
   "width": "container",
   "height": 330,
   "title": {
-    "text": "Household budgets vary sharply across Malaysia",
-    "subtitle": "Mean monthly household expenditure by state / federal territory, 2024"
+    "text": "Household budgets set the room for fashion spending",
+    "subtitle": "Mean monthly household expenditure by state / federal territory, 2024 · context only"
   },
   "projection": {
     "type": "mercator"

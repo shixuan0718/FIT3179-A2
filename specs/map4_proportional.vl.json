@@ -3,35 +3,107 @@
   "width": "container",
   "height": 330,
   "title": {
-    "text": "Manufacturing output clusters in the west",
-    "subtitle": "Real manufacturing GDP by state, 2025 \u00b7 context only"
+    "text": "Import hotspots cluster across Asia",
+    "subtitle": "Top 10 origins of Malaysia’s apparel & footwear imports, 2025"
   },
   "projection": {
-    "type": "mercator"
+    "type": "equalEarth",
+    "center": [
+      88,
+      18
+    ],
+    "scale": 190
   },
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/dosm-malaysia/data-open/main/datasets/geodata/administrative_1_state.geojson"
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#f1ebe4",
-        "stroke": "#c8bdb2",
-        "strokeWidth": 0.7
+        "fill": "#eee7df",
+        "stroke": "#d0c6bc",
+        "strokeWidth": 0.4
       }
     },
     {
       "data": {
-        "url": "data/manufacturing_2025.csv"
+        "url": "data/trade_partners_2025.csv"
       },
+      "transform": [
+        {
+          "filter": "datum.flow === 'Import'"
+        }
+      ],
       "mark": {
         "type": "circle",
         "filled": true,
         "opacity": 0.78,
         "color": "#b66a3c",
         "stroke": "#fffaf4",
-        "strokeWidth": 1.5
+        "strokeWidth": 1.3
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "value_mil",
+          "type": "quantitative",
+          "title": "Imports (USD m)",
+          "scale": {
+            "range": [
+              30,
+              1500
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "title": "Imports (USD million)",
+            "symbolLimit": 4,
+            "columns": 4,
+            "offset": 8
+          }
+        },
+        "tooltip": [
+          {
+            "field": "partnerDesc",
+            "title": "Origin"
+          },
+          {
+            "field": "value_mil",
+            "title": "Imports (USD m)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/trade_partners_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.flow === 'Import' && (datum.rank <= 5)"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 9,
+        "fontWeight": 700,
+        "dy": -13,
+        "color": "#2d2926"
       },
       "encoding": {
         "longitude": {
@@ -40,36 +112,9 @@
         "latitude": {
           "field": "lat"
         },
-        "size": {
-          "field": "value_bil",
-          "type": "quantitative",
-          "title": "RM billion",
-          "scale": {
-            "range": [
-              20,
-              1300
-            ]
-          },
-          "legend": {
-            "orient": "bottom",
-            "direction": "horizontal",
-            "title": "Manufacturing GDP (RM bn)",
-            "symbolLimit": 5,
-            "columns": 5,
-            "offset": 8
-          }
-        },
-        "tooltip": [
-          {
-            "field": "state",
-            "title": "State"
-          },
-          {
-            "field": "value_bil",
-            "title": "Manufacturing GDP (RM bn)",
-            "format": ".1f"
-          }
-        ]
+        "text": {
+          "field": "partnerDesc"
+        }
       }
     }
   ],

@@ -3,8 +3,8 @@
   "width": "container",
   "height": 340,
   "title": {
-    "text": "Malaysia’s fashion supply chain is Asia-heavy",
-    "subtitle": "Top 8 import origins for HS 61, 62 & 64, 2025"
+    "text": "Where Malaysia’s fashion imports come from",
+    "subtitle": "Top 8 origins for HS 61, 62 & 64, 2025 · line width = import value"
   },
   "projection": {
     "type": "equalEarth",

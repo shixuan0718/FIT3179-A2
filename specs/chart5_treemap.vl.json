@@ -3,8 +3,8 @@
   "width": "container",
   "height": 340,
   "title": {
-    "text": "China anchors the largest import blocks",
-    "subtitle": "2025 imports by HS category and partner; rectangle area ∝ USD value"
+    "text": "Knitted apparel forms the largest import block",
+    "subtitle": "2025 product mix by category and supplier; rectangle area ∝ USD value"
   },
   "data": {
     "url": "data/trade_import_treemap_layout_2025.csv"

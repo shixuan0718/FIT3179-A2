@@ -4,7 +4,7 @@
   "height": 350,
   "title": {
     "text": "Clothing inflation has cooled — but not evenly",
-    "subtitle": "Average year-on-year clothing & footwear inflation by state, 2020–2026"
+    "subtitle": "Average year-on-year clothing & footwear inflation by state, 2020–Aug 2026"
   },
   "data": {
     "url": "data/clothing_inflation_heatmap.csv"

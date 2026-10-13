@@ -3,8 +3,8 @@
   "width": "container",
   "height": 345,
   "title": {
-    "text": "China dominates the import side of Malaysia’s fashion trade",
-    "subtitle": "Top partners by total 2025 apparel & footwear trade (USD million)"
+    "text": "Malaysia buys from China but exports most to the United States",
+    "subtitle": "Major 2025 apparel & footwear partners (USD million)"
   },
   "data": {
     "url": "data/trade_balance_2025.csv"
