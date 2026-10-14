@@ -7,7 +7,120 @@
     "subtitle": "Average year-on-year clothing & footwear inflation, Jan–Aug 2026"
   },
   "data": {
-    "url": "data/state_clothing_inflation_2026.csv"
+    "values": [
+      {
+        "state": "Johor",
+        "tile_x": 2.0,
+        "tile_y": 6.0,
+        "tile_label": "Johor",
+        "inflation_yoy": 0.55
+      },
+      {
+        "state": "Kedah",
+        "tile_x": 1.0,
+        "tile_y": 1.0,
+        "tile_label": "Kedah",
+        "inflation_yoy": -1.088
+      },
+      {
+        "state": "Kelantan",
+        "tile_x": 3.0,
+        "tile_y": 1.0,
+        "tile_label": "Kelantan",
+        "inflation_yoy": -0.538
+      },
+      {
+        "state": "Melaka",
+        "tile_x": 1.0,
+        "tile_y": 5.0,
+        "tile_label": "Melaka",
+        "inflation_yoy": -2.412
+      },
+      {
+        "state": "Negeri Sembilan",
+        "tile_x": 1.0,
+        "tile_y": 4.0,
+        "tile_label": "N. Sembilan",
+        "inflation_yoy": 1.65
+      },
+      {
+        "state": "Pahang",
+        "tile_x": 3.0,
+        "tile_y": 3.0,
+        "tile_label": "Pahang",
+        "inflation_yoy": 0.275
+      },
+      {
+        "state": "Pulau Pinang",
+        "tile_x": 0.0,
+        "tile_y": 1.0,
+        "tile_label": "Penang",
+        "inflation_yoy": -0.875
+      },
+      {
+        "state": "Perak",
+        "tile_x": 1.0,
+        "tile_y": 2.0,
+        "tile_label": "Perak",
+        "inflation_yoy": -0.2
+      },
+      {
+        "state": "Perlis",
+        "tile_x": 1.0,
+        "tile_y": 0.0,
+        "tile_label": "Perlis",
+        "inflation_yoy": 0.112
+      },
+      {
+        "state": "Selangor",
+        "tile_x": 1.0,
+        "tile_y": 3.0,
+        "tile_label": "Selangor",
+        "inflation_yoy": 0.875
+      },
+      {
+        "state": "Terengganu",
+        "tile_x": 3.0,
+        "tile_y": 2.0,
+        "tile_label": "Terengganu",
+        "inflation_yoy": 0.275
+      },
+      {
+        "state": "Sabah",
+        "tile_x": 7.0,
+        "tile_y": 2.0,
+        "tile_label": "Sabah",
+        "inflation_yoy": -1.862
+      },
+      {
+        "state": "Sarawak",
+        "tile_x": 6.0,
+        "tile_y": 4.0,
+        "tile_label": "Sarawak",
+        "inflation_yoy": -0.3
+      },
+      {
+        "state": "W.P. Kuala Lumpur",
+        "tile_x": 2.0,
+        "tile_y": 3.0,
+        "tile_label": "Kuala Lumpur",
+        "inflation_yoy": 0.788
+      },
+      {
+        "state": "W.P. Labuan",
+        "tile_x": 5.0,
+        "tile_y": 2.0,
+        "tile_label": "Labuan",
+        "inflation_yoy": -3.062
+      },
+      {
+        "state": "W.P. Putrajaya",
+        "tile_x": 2.0,
+        "tile_y": 4.0,
+        "tile_label": "Putrajaya",
+        "inflation_yoy": -0.388
+      }
+    ]
   },
   "layer": [
     {
@@ -21,13 +134,31 @@
         "x": {
           "field": "tile_x",
           "type": "ordinal",
+          "sort": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
           "axis": null
         },
         "y": {
           "field": "tile_y",
           "type": "ordinal",
-          "axis": null,
-          "sort": "descending"
+          "sort": [
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "axis": null
         },
         "color": {
           "field": "inflation_yoy",
@@ -73,12 +204,32 @@
       "encoding": {
         "x": {
           "field": "tile_x",
-          "type": "ordinal"
+          "type": "ordinal",
+          "sort": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "axis": null
         },
         "y": {
           "field": "tile_y",
           "type": "ordinal",
-          "sort": "descending"
+          "sort": [
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "axis": null
         },
         "text": {
           "field": "tile_label",

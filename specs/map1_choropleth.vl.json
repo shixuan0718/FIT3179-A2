@@ -32,7 +32,72 @@
     },
     {
       "data": {
-        "url": "data/trade_partner_dominant_2025.csv"
+        "values": [
+          {
+            "partner": "China",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 46.2,
+            "imports_mil": 1183.4,
+            "lat": 35.86,
+            "lon": 104.2
+          },
+          {
+            "partner": "Viet Nam",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 46.2,
+            "imports_mil": 493.3,
+            "lat": 14.06,
+            "lon": 108.28
+          },
+          {
+            "partner": "Singapore",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 63.5,
+            "imports_mil": 381.2,
+            "lat": 1.35,
+            "lon": 103.82
+          },
+          {
+            "partner": "Bangladesh",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 83.8,
+            "imports_mil": 352.2,
+            "lat": 23.69,
+            "lon": 90.36
+          },
+          {
+            "partner": "Indonesia",
+            "dominant_category": "Footwear",
+            "dominant_share": 46.9,
+            "imports_mil": 196.4,
+            "lat": -0.79,
+            "lon": 113.92
+          },
+          {
+            "partner": "India",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 59.1,
+            "imports_mil": 169.9,
+            "lat": 20.59,
+            "lon": 78.96
+          },
+          {
+            "partner": "Cambodia",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 47.1,
+            "imports_mil": 88.5,
+            "lat": 12.57,
+            "lon": 104.99
+          },
+          {
+            "partner": "Italy",
+            "dominant_category": "Footwear",
+            "dominant_share": 54.9,
+            "imports_mil": 58.3,
+            "lat": 41.87,
+            "lon": 12.57
+          }
+        ]
       },
       "mark": {
         "type": "circle",
@@ -71,7 +136,10 @@
             "orient": "bottom",
             "direction": "horizontal",
             "title": null,
-            "columns": 3
+            "columns": 3,
+            "labelLimit": 130,
+            "symbolSize": 80,
+            "offset": 8
           }
         },
         "tooltip": [
@@ -98,7 +166,72 @@
     },
     {
       "data": {
-        "url": "data/trade_partner_dominant_2025.csv"
+        "values": [
+          {
+            "partner": "China",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 46.2,
+            "imports_mil": 1183.4,
+            "lat": 35.86,
+            "lon": 104.2
+          },
+          {
+            "partner": "Viet Nam",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 46.2,
+            "imports_mil": 493.3,
+            "lat": 14.06,
+            "lon": 108.28
+          },
+          {
+            "partner": "Singapore",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 63.5,
+            "imports_mil": 381.2,
+            "lat": 1.35,
+            "lon": 103.82
+          },
+          {
+            "partner": "Bangladesh",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 83.8,
+            "imports_mil": 352.2,
+            "lat": 23.69,
+            "lon": 90.36
+          },
+          {
+            "partner": "Indonesia",
+            "dominant_category": "Footwear",
+            "dominant_share": 46.9,
+            "imports_mil": 196.4,
+            "lat": -0.79,
+            "lon": 113.92
+          },
+          {
+            "partner": "India",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 59.1,
+            "imports_mil": 169.9,
+            "lat": 20.59,
+            "lon": 78.96
+          },
+          {
+            "partner": "Cambodia",
+            "dominant_category": "Knitted apparel",
+            "dominant_share": 47.1,
+            "imports_mil": 88.5,
+            "lat": 12.57,
+            "lon": 104.99
+          },
+          {
+            "partner": "Italy",
+            "dominant_category": "Footwear",
+            "dominant_share": 54.9,
+            "imports_mil": 58.3,
+            "lat": 41.87,
+            "lon": 12.57
+          }
+        ]
       },
       "transform": [
         {

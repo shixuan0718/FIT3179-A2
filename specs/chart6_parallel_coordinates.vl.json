@@ -7,7 +7,264 @@
     "subtitle": "Top 8 suppliers, 2025 · category axes show each partner’s mix; volume is relative"
   },
   "data": {
-    "url": "data/trade_partner_profiles_2025.csv"
+    "values": [
+      {
+        "partner": "China",
+        "metric": "Knitted",
+        "raw": 46.23386493710767,
+        "unit": "% of partner imports",
+        "total_mil": 1183.396139895,
+        "normalized": 0.5516375275598565
+      },
+      {
+        "partner": "China",
+        "metric": "Woven",
+        "raw": 28.388823696924366,
+        "unit": "% of partner imports",
+        "total_mil": 1183.396139895,
+        "normalized": 0.4758489896671333
+      },
+      {
+        "partner": "China",
+        "metric": "Footwear",
+        "raw": 25.37731136596797,
+        "unit": "% of partner imports",
+        "total_mil": 1183.396139895,
+        "normalized": 0.4618850645904722
+      },
+      {
+        "partner": "China",
+        "metric": "Volume",
+        "raw": 1183.396139895,
+        "unit": "USD million",
+        "total_mil": 1183.396139895,
+        "normalized": 1.0
+      },
+      {
+        "partner": "Viet Nam",
+        "metric": "Knitted",
+        "raw": 46.15498288546235,
+        "unit": "% of partner imports",
+        "total_mil": 493.33684778099996,
+        "normalized": 0.5506963494862158
+      },
+      {
+        "partner": "Viet Nam",
+        "metric": "Woven",
+        "raw": 13.256589595965462,
+        "unit": "% of partner imports",
+        "total_mil": 493.33684778099996,
+        "normalized": 0.0
+      },
+      {
+        "partner": "Viet Nam",
+        "metric": "Footwear",
+        "raw": 40.58842751857219,
+        "unit": "% of partner imports",
+        "total_mil": 493.33684778099996,
+        "normalized": 0.7387381663757404
+      },
+      {
+        "partner": "Viet Nam",
+        "metric": "Volume",
+        "raw": 493.33684778099996,
+        "unit": "USD million",
+        "total_mil": 493.33684778099996,
+        "normalized": 0.38669297209615805
+      },
+      {
+        "partner": "Singapore",
+        "metric": "Knitted",
+        "raw": 63.49219642726869,
+        "unit": "% of partner imports",
+        "total_mil": 381.248977928,
+        "normalized": 0.7575546259030611
+      },
+      {
+        "partner": "Singapore",
+        "metric": "Woven",
+        "raw": 17.976626072934202,
+        "unit": "% of partner imports",
+        "total_mil": 381.248977928,
+        "normalized": 0.1484265029058243
+      },
+      {
+        "partner": "Singapore",
+        "metric": "Footwear",
+        "raw": 18.531177499797113,
+        "unit": "% of partner imports",
+        "total_mil": 381.248977928,
+        "normalized": 0.33728057291008523
+      },
+      {
+        "partner": "Singapore",
+        "metric": "Volume",
+        "raw": 381.248977928,
+        "unit": "USD million",
+        "total_mil": 381.248977928,
+        "normalized": 0.2870721436989089
+      },
+      {
+        "partner": "Bangladesh",
+        "metric": "Knitted",
+        "raw": 83.8120371208628,
+        "unit": "% of partner imports",
+        "total_mil": 352.18119867,
+        "normalized": 1.0
+      },
+      {
+        "partner": "Bangladesh",
+        "metric": "Woven",
+        "raw": 16.187962879137192,
+        "unit": "% of partner imports",
+        "total_mil": 352.18119867,
+        "normalized": 0.09218011073765396
+      },
+      {
+        "partner": "Bangladesh",
+        "metric": "Footwear",
+        "raw": 0.0,
+        "unit": "% of partner imports",
+        "total_mil": 352.18119867,
+        "normalized": 0.0
+      },
+      {
+        "partner": "Bangladesh",
+        "metric": "Volume",
+        "raw": 352.18119867,
+        "unit": "USD million",
+        "total_mil": 352.18119867,
+        "normalized": 0.2612374458574026
+      },
+      {
+        "partner": "Indonesia",
+        "metric": "Knitted",
+        "raw": 37.111720608515306,
+        "unit": "% of partner imports",
+        "total_mil": 196.42647871000003,
+        "normalized": 0.4427970239525096
+      },
+      {
+        "partner": "Indonesia",
+        "metric": "Woven",
+        "raw": 15.960136396012267,
+        "unit": "% of partner imports",
+        "total_mil": 196.42647871000003,
+        "normalized": 0.08501586776526021
+      },
+      {
+        "partner": "Indonesia",
+        "metric": "Footwear",
+        "raw": 46.92814299547242,
+        "unit": "% of partner imports",
+        "total_mil": 196.42647871000003,
+        "normalized": 0.8541254842166739
+      },
+      {
+        "partner": "Indonesia",
+        "metric": "Volume",
+        "raw": 196.42647871000003,
+        "unit": "USD million",
+        "total_mil": 196.42647871000003,
+        "normalized": 0.1228066392987081
+      },
+      {
+        "partner": "India",
+        "metric": "Knitted",
+        "raw": 59.052849318885926,
+        "unit": "% of partner imports",
+        "total_mil": 169.94822227299997,
+        "normalized": 0.7045867317808729
+      },
+      {
+        "partner": "India",
+        "metric": "Woven",
+        "raw": 30.465829616521845,
+        "unit": "% of partner imports",
+        "total_mil": 169.94822227299997,
+        "normalized": 0.5411626215987517
+      },
+      {
+        "partner": "India",
+        "metric": "Footwear",
+        "raw": 10.48132106459225,
+        "unit": "% of partner imports",
+        "total_mil": 169.94822227299997,
+        "normalized": 0.19076747678656267
+      },
+      {
+        "partner": "India",
+        "metric": "Volume",
+        "raw": 169.94822227299997,
+        "unit": "USD million",
+        "total_mil": 169.94822227299997,
+        "normalized": 0.09927344302842371
+      },
+      {
+        "partner": "Cambodia",
+        "metric": "Knitted",
+        "raw": 47.114569745741015,
+        "unit": "% of partner imports",
+        "total_mil": 88.458935153,
+        "normalized": 0.5621456220876546
+      },
+      {
+        "partner": "Cambodia",
+        "metric": "Woven",
+        "raw": 32.23843121294101,
+        "unit": "% of partner imports",
+        "total_mil": 88.458935153,
+        "normalized": 0.5969039399732116
+      },
+      {
+        "partner": "Cambodia",
+        "metric": "Footwear",
+        "raw": 20.646999041317972,
+        "unit": "% of partner imports",
+        "total_mil": 88.458935153,
+        "normalized": 0.3757900255181274
+      },
+      {
+        "partner": "Cambodia",
+        "metric": "Volume",
+        "raw": 88.458935153,
+        "unit": "USD million",
+        "total_mil": 88.458935153,
+        "normalized": 0.026847851400692277
+      },
+      {
+        "partner": "Italy",
+        "metric": "Knitted",
+        "raw": 0.0,
+        "unit": "% of partner imports",
+        "total_mil": 58.251211306,
+        "normalized": 0.0
+      },
+      {
+        "partner": "Italy",
+        "metric": "Woven",
+        "raw": 45.057086034014496,
+        "unit": "% of partner imports",
+        "total_mil": 58.251211306,
+        "normalized": 1.0
+      },
+      {
+        "partner": "Italy",
+        "metric": "Footwear",
+        "raw": 54.942913965985504,
+        "unit": "% of partner imports",
+        "total_mil": 58.251211306,
+        "normalized": 1.0
+      },
+      {
+        "partner": "Italy",
+        "metric": "Volume",
+        "raw": 58.251211306,
+        "unit": "USD million",
+        "total_mil": 58.251211306,
+        "normalized": 0.0
+      }
+    ]
   },
   "params": [
     {
@@ -42,7 +299,7 @@
       "axis": {
         "title": null,
         "labelAngle": 0,
-        "labelFontSize": 10,
+        "labelFontSize": 11,
         "labelPadding": 8
       }
     },
@@ -69,7 +326,7 @@
       "type": "quantitative",
       "title": "Total imports (USD m)",
       "scale": {
-        "scheme": "goldred"
+        "scheme": "yelloworangered"
       },
       "legend": {
         "orient": "top",
@@ -83,14 +340,14 @@
         "param": "hover",
         "value": 1
       },
-      "value": 0.34
+      "value": 0.52
     },
     "strokeWidth": {
       "condition": {
         "param": "hover",
         "value": 3
       },
-      "value": 1.2
+      "value": 1.5
     },
     "tooltip": [
       {
@@ -110,7 +367,16 @@
         "field": "unit",
         "title": "Unit"
       }
-    ]
+    ],
+    "order": {
+      "field": "metric",
+      "sort": [
+        "Knitted",
+        "Woven",
+        "Footwear",
+        "Volume"
+      ]
+    }
   },
   "background": null,
   "config": {
