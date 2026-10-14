@@ -1,0 +1,161 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 340,
+  "title": {
+    "text": "Knitted apparel forms the largest import block",
+    "subtitle": "2025 product mix by category and supplier; rectangle area ∝ USD value"
+  },
+  "data": {
+    "url": "data/trade_import_treemap_layout_2025.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#fffaf4",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "reverse": true
+          }
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Knitted apparel",
+              "Woven apparel",
+              "Footwear"
+            ],
+            "range": [
+              "#7a2430",
+              "#b66a3c",
+              "#c9a96e"
+            ]
+          },
+          "legend": {
+            "orient": "top"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "category"
+          },
+          {
+            "field": "partner"
+          },
+          {
+            "field": "value_mil",
+            "title": "USD million",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.share_total > 0.035"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dx": 6,
+        "dy": 6,
+        "font": "Inter",
+        "fontSize": 9,
+        "fontWeight": 700,
+        "color": "#fffaf4",
+        "limit": 110
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "reverse": true
+          }
+        },
+        "text": {
+          "field": "partner"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 10,
+      "titleFontSize": 11
+    },
+    "title": {
+      "font": "DM Serif Display",
+      "fontSize": 18,
+      "fontWeight": "normal",
+      "color": "#2d2926",
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleColor": "#766b63",
+      "subtitleFontSize": 10,
+      "offset": 8
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  }
+}
