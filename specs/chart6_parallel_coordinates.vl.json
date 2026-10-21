@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Chart 6 (parallel coordinates): each line is one state across three scales, 2024 (OpenDOSM HIES). Each scale runs from the lowest to the highest state on that measure.",
+  "description": "Parallel coordinates comparing the 2025 HS 61/62/64 product shares within each of Malaysia’s eight biggest named clothing and footwear import suppliers; values from original UN Comtrade export file.",
   "width": "container",
-  "height": 360,
+  "height": 330,
   "autosize": {
     "type": "fit",
     "contains": "padding",
@@ -41,454 +41,275 @@
   },
   "params": [
     {
-      "name": "hl",
+      "name": "supplier",
       "value": ""
     }
   ],
   "data": {
-    "url": "data/hies_parallel_2024.csv"
+    "url": "data/supplier_profiles_2025.csv"
   },
   "layer": [
     {
       "data": {
-        "url": "data/hies_axes.csv"
+        "url": "data/supplier_profile_axes.csv"
       },
       "mark": {
         "type": "rule",
-        "color": "#9a8f82",
-        "strokeWidth": 1.6
+        "color": "#b9ada1",
+        "strokeWidth": 1.2
       },
       "encoding": {
         "x": {
+          "field": "order",
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.55,
-              2.55
+              -0.4,
+              2.4
             ]
           },
-          "axis": null,
-          "field": "order"
+          "axis": null
         },
         "y": {
+          "datum": 0,
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.16,
-              1.2
+              -20,
+              120
             ]
           },
-          "axis": null,
-          "datum": 0
+          "axis": null
         },
         "y2": {
-          "datum": 1
+          "datum": 100
         }
       }
     },
     {
       "data": {
-        "url": "data/hies_axes.csv"
+        "values": [
+          {
+            "x": 0,
+            "y": 25
+          },
+          {
+            "x": 0,
+            "y": 50
+          },
+          {
+            "x": 0,
+            "y": 75
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#ede5dd",
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.4,
+              2.4
+            ]
+          },
+          "axis": null
+        },
+        "x2": {
+          "datum": 2
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -20,
+              120
+            ]
+          },
+          "axis": null
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/supplier_profile_axes.csv"
       },
       "mark": {
         "type": "text",
-        "fontWeight": 700,
         "fontSize": 12,
-        "baseline": "bottom",
-        "color": "#2d2926"
+        "fontWeight": 700,
+        "color": "#2d2926",
+        "baseline": "bottom"
       },
       "encoding": {
         "x": {
+          "field": "order",
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.55,
-              2.55
+              -0.4,
+              2.4
             ]
           },
-          "axis": null,
-          "field": "order"
+          "axis": null
         },
         "y": {
+          "datum": 108,
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.16,
-              1.2
+              -20,
+              120
             ]
           },
-          "axis": null,
-          "datum": 1.15
+          "axis": null
         },
         "text": {
-          "field": "axis"
-        }
-      }
-    },
-    {
-      "data": {
-        "url": "data/hies_axes.csv"
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 10.5,
-        "color": "#6b625a"
-      },
-      "encoding": {
-        "x": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.55,
-              2.55
-            ]
-          },
-          "axis": null,
-          "field": "order"
-        },
-        "y": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.16,
-              1.2
-            ]
-          },
-          "axis": null,
-          "datum": 1.065
-        },
-        "text": {
-          "field": "top"
-        }
-      }
-    },
-    {
-      "data": {
-        "url": "data/hies_axes.csv"
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 10.5,
-        "color": "#6b625a"
-      },
-      "encoding": {
-        "x": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.55,
-              2.55
-            ]
-          },
-          "axis": null,
-          "field": "order"
-        },
-        "y": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.16,
-              1.2
-            ]
-          },
-          "axis": null,
-          "datum": -0.07
-        },
-        "text": {
-          "field": "bottom"
+          "field": "category"
         }
       }
     },
     {
       "mark": {
         "type": "line",
-        "strokeWidth": 2.4,
         "point": {
           "filled": true,
-          "size": 26
-        }
+          "size": 40
+        },
+        "strokeWidth": 2.7
       },
       "encoding": {
         "x": {
+          "field": "order",
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.55,
-              2.55
+              -0.4,
+              2.4
             ]
           },
-          "axis": null,
-          "field": "order"
+          "axis": null
         },
         "y": {
+          "field": "share_pct",
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.16,
-              1.2
+              -20,
+              120
             ]
           },
-          "axis": null,
-          "field": "norm"
+          "axis": null
         },
         "detail": {
-          "field": "state",
+          "field": "partner",
           "type": "nominal"
         },
         "color": {
-          "field": "region",
+          "field": "dominant",
           "type": "nominal",
           "scale": {
             "domain": [
-              "Peninsular states",
-              "Sabah & Sarawak",
-              "Federal territories"
+              "Knitted apparel",
+              "Woven apparel",
+              "Footwear"
             ],
             "range": [
-              "#a39a8f",
               "#7a2430",
-              "#315c55"
+              "#b66a3c",
+              "#a8884a"
             ]
           },
           "legend": {
-            "title": null,
             "orient": "bottom",
             "direction": "horizontal",
-            "symbolType": "stroke",
-            "symbolStrokeWidth": 3
+            "title": "Largest category for each supplier",
+            "labelLimit": 145
           }
         },
         "opacity": {
           "condition": {
-            "test": "hl === '' || datum.state === hl",
-            "value": 0.92
+            "test": "supplier === '' || datum.partner === supplier",
+            "value": 0.88
           },
-          "value": 0.12
+          "value": 0.09
         },
         "tooltip": [
           {
-            "field": "state",
-            "title": "State"
+            "field": "partner",
+            "title": "Supplier"
           },
           {
-            "field": "axis",
-            "title": "Measure"
+            "field": "category",
+            "title": "Product group"
           },
           {
-            "field": "raw",
-            "title": "Value (RM or %)",
+            "field": "share_pct",
+            "title": "Share of its imports (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "category_mil",
+            "title": "Value (US$ million)",
+            "format": ",.1f"
+          },
+          {
+            "field": "total_mil",
+            "title": "All three product groups (US$ m)",
             "format": ",.1f"
           }
         ]
       }
     },
     {
-      "transform": [
-        {
-          "filter": "datum.state === 'W.P. Kuala Lumpur' && datum.order === 0"
-        }
-      ],
+      "data": {
+        "values": [
+          {
+            "order": 0,
+            "label": "0–100% = share of supplier imports"
+          }
+        ]
+      },
       "mark": {
         "type": "text",
-        "align": "right",
-        "dx": -9,
-        "fontSize": 11,
-        "fontWeight": 700,
-        "color": "#2d2926"
+        "fontSize": 10,
+        "color": "#75695f",
+        "baseline": "top"
       },
       "encoding": {
         "x": {
+          "field": "order",
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.55,
-              2.55
+              -0.4,
+              2.4
             ]
           },
-          "axis": null,
-          "field": "order"
+          "axis": null
         },
         "y": {
+          "datum": -10,
           "type": "quantitative",
           "scale": {
             "domain": [
-              -0.16,
-              1.2
+              -20,
+              120
             ]
           },
-          "axis": null,
-          "field": "norm"
+          "axis": null
         },
         "text": {
-          "field": "state"
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.state === 'Kelantan' && datum.order === 0"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "dx": -9,
-        "fontSize": 11,
-        "fontWeight": 700,
-        "color": "#2d2926"
-      },
-      "encoding": {
-        "x": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.55,
-              2.55
-            ]
-          },
-          "axis": null,
-          "field": "order"
-        },
-        "y": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.16,
-              1.2
-            ]
-          },
-          "axis": null,
-          "field": "norm"
-        },
-        "text": {
-          "field": "state"
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.state === 'Sabah' && datum.order === 2"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 9,
-        "fontSize": 11,
-        "fontWeight": 700,
-        "color": "#2d2926"
-      },
-      "encoding": {
-        "x": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.55,
-              2.55
-            ]
-          },
-          "axis": null,
-          "field": "order"
-        },
-        "y": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.16,
-              1.2
-            ]
-          },
-          "axis": null,
-          "field": "norm"
-        },
-        "text": {
-          "field": "state"
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.state === 'W.P. Putrajaya' && datum.order === 2"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 9,
-        "fontSize": 11,
-        "fontWeight": 700,
-        "color": "#2d2926"
-      },
-      "encoding": {
-        "x": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.55,
-              2.55
-            ]
-          },
-          "axis": null,
-          "field": "order"
-        },
-        "y": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.16,
-              1.2
-            ]
-          },
-          "axis": null,
-          "field": "norm"
-        },
-        "text": {
-          "field": "state"
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.state === 'Sabah' && datum.order === 1"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "dx": -9,
-        "fontSize": 11,
-        "fontWeight": 700,
-        "color": "#2d2926"
-      },
-      "encoding": {
-        "x": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.55,
-              2.55
-            ]
-          },
-          "axis": null,
-          "field": "order"
-        },
-        "y": {
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.16,
-              1.2
-            ]
-          },
-          "axis": null,
-          "field": "norm"
-        },
-        "text": {
-          "field": "state"
+          "field": "label"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Map 4 (proportional symbol map): manufacturing output by state, 2025, in RM billion at constant 2015 prices (OpenDOSM annual real GDP by state and sector). Circle area = output. All manufacturing, not only clothing.",
+  "description": "Fashion-only proportional-symbol world map. Symbol area indicates 2025 apparel and footwear import value by the ten leading supplier countries, calculated from the supplied UN Comtrade HS 61/62/64 source. Symbol colour shows the largest HS chapter for each supplier.",
   "width": "container",
-  "height": 360,
+  "height": 430,
   "autosize": {
     "type": "fit",
     "contains": "padding",
@@ -41,81 +41,48 @@
   },
   "params": [
     {
-      "name": "hl",
+      "name": "supplier",
       "value": ""
     }
   ],
   "projection": {
-    "type": "mercator"
+    "type": "equalEarth",
+    "rotate": [
+      -100,
+      0,
+      0
+    ]
   },
   "layer": [
     {
       "data": {
-        "values": [
-          {
-            "lon": 95.6,
-            "lat": 0.6
-          },
-          {
-            "lon": 120.4,
-            "lat": 7.6
-          }
-        ]
-      },
-      "mark": {
-        "type": "point",
-        "opacity": 0,
-        "size": 1
-      },
-      "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        }
-      }
-    },
-    {
-      "data": {
-        "url": "geo/malaysia-states.geojson",
+        "url": "geo/world-110m.json",
         "format": {
-          "property": "features"
+          "type": "topojson",
+          "feature": "countries"
         }
       },
+      "transform": [
+        {
+          "filter": "datum.properties.name !== 'Antarctica'"
+        }
+      ],
       "mark": {
         "type": "geoshape",
-        "fill": "#eee7df"
-      },
-      "encoding": {
-        "stroke": {
-          "condition": {
-            "test": "datum.properties.state === hl",
-            "value": "#2d2926"
-          },
-          "value": "#fffaf4"
-        },
-        "strokeWidth": {
-          "condition": {
-            "test": "datum.properties.state === hl",
-            "value": 2.6
-          },
-          "value": 0.9
-        }
+        "fill": "#f1ebe4",
+        "stroke": "#d8cec4",
+        "strokeWidth": 0.4
       }
     },
     {
       "data": {
-        "url": "data/manufacturing_2025.csv"
+        "url": "data/top_import_suppliers_2025.csv"
       },
       "mark": {
         "type": "circle",
-        "opacity": 0.78,
-        "color": "#b66a3c",
         "stroke": "#fffaf4",
-        "strokeWidth": 1.2
+        "strokeWidth": 1.7,
+        "opacity": 0.88
       },
       "encoding": {
         "longitude": {
@@ -126,161 +93,117 @@
           "field": "lat",
           "type": "quantitative"
         },
+        "color": {
+          "field": "dominant",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Knitted apparel",
+              "Woven apparel",
+              "Footwear"
+            ],
+            "range": [
+              "#7a2430",
+              "#b66a3c",
+              "#a8884a"
+            ]
+          },
+          "legend": {
+            "title": "Largest fashion product group",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "labelLimit": 165,
+            "symbolSize": 160
+          }
+        },
         "size": {
-          "field": "value_bil",
+          "field": "total_mil",
           "type": "quantitative",
           "scale": {
             "type": "sqrt",
             "domain": [
               0,
-              140
+              1200
             ],
             "range": [
-              0,
-              1500
+              25,
+              1700
             ]
           },
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
-            "title": "Manufacturing output (RM billion, 2025)",
+            "title": "Imports to Malaysia (US$ million, 2025)",
             "values": [
-              10,
-              50,
-              100
+              100,
+              400,
+              1000
             ],
-            "titleLimit": 320,
             "symbolFillColor": "#b66a3c",
-            "symbolOpacity": 0.78
+            "symbolOpacity": 0.85,
+            "titleLimit": 340
           }
+        },
+        "opacity": {
+          "condition": {
+            "test": "supplier === '' || datum.partner === supplier",
+            "value": 0.9
+          },
+          "value": 0.2
         },
         "tooltip": [
           {
-            "field": "state",
-            "title": "State"
+            "field": "partner",
+            "title": "2025 supplier"
           },
           {
-            "field": "value_bil",
-            "title": "Manufacturing output (RM billion)",
-            "format": ".1f"
+            "field": "total_mil",
+            "title": "Total imports (US$ million)",
+            "format": ",.1f"
+          },
+          {
+            "field": "dominant",
+            "title": "Largest category"
           },
           {
             "field": "share_pct",
-            "title": "Share of the state's economy (%)",
-            "format": ".0f"
-          }
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "data/manufacturing_2025.csv"
-      },
-      "transform": [
-        {
-          "filter": "datum.state === 'Selangor'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": 700,
-        "align": "right",
-        "dx": -20,
-        "color": "#2d2926"
-      },
-      "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "state"
-        }
-      }
-    },
-    {
-      "data": {
-        "url": "data/manufacturing_2025.csv"
-      },
-      "transform": [
-        {
-          "filter": "datum.state === 'Pulau Pinang'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": 700,
-        "align": "right",
-        "dx": -12,
-        "color": "#2d2926"
-      },
-      "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "text": {
-          "value": "Penang"
-        }
-      }
-    },
-    {
-      "data": {
-        "url": "data/manufacturing_2025.csv"
-      },
-      "transform": [
-        {
-          "filter": "datum.state === 'Johor'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": 700,
-        "align": "left",
-        "dx": 16,
-        "color": "#2d2926"
-      },
-      "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "state"
-        }
-      }
-    },
-    {
-      "data": {
-        "values": [
+            "title": "Share of supplier imports (%)",
+            "format": ".1f"
+          },
           {
-            "lon": 112.6,
-            "lat": 6.6,
-            "t": "Selangor, Penang and Johor make 60% of the total"
+            "field": "knitted_mil",
+            "title": "Knitted apparel (US$ m)",
+            "format": ",.1f"
+          },
+          {
+            "field": "woven_mil",
+            "title": "Woven apparel (US$ m)",
+            "format": ",.1f"
+          },
+          {
+            "field": "footwear_mil",
+            "title": "Footwear (US$ m)",
+            "format": ",.1f"
           }
         ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/top_import_suppliers_2025.csv"
       },
+      "transform": [
+        {
+          "filter": "datum.partner === 'China' || datum.partner === 'Bangladesh' || datum.partner === 'Viet Nam'"
+        }
+      ],
       "mark": {
         "type": "text",
-        "fontSize": 11,
-        "color": "#2d2926",
-        "align": "left",
-        "fontWeight": 700
+        "fontWeight": 700,
+        "fontSize": 12,
+        "dx": 12,
+        "dy": -13,
+        "color": "#2d2926"
       },
       "encoding": {
         "longitude": {
@@ -292,7 +215,7 @@
           "type": "quantitative"
         },
         "text": {
-          "field": "t"
+          "field": "partner"
         }
       }
     }

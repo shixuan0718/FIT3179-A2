@@ -5,16 +5,16 @@ const CHARTS = [
   { id: "map1", spec: "specs/map1_choropleth.vl.json", state: true },
   { id: "map2", spec: "specs/map2_tilegrid.vl.json", state: true },
   { id: "map3", spec: "specs/map3_flow.vl.json" },
-  { id: "map4", spec: "specs/map4_proportional.vl.json", state: true },
+  { id: "map4", spec: "specs/map4_proportional.vl.json", supplier: true },
   { id: "chart5", spec: "specs/chart5_treemap.vega.json", cat: true },
-  { id: "chart6", spec: "specs/chart6_parallel_coordinates.vl.json", state: true },
+  { id: "chart6", spec: "specs/chart6_parallel_coordinates.vl.json", supplier: true },
   { id: "chart7", spec: "specs/chart7_diverging_bar.vl.json", cat: true },
   { id: "chart8", spec: "specs/chart8_radial_bar.vl.json" },
   { id: "chart9", spec: "specs/chart9_heatmap.vl.json" },
   { id: "chart10", spec: "specs/chart10_streamgraph.vl.json", cat: true },
   { id: "chart11", spec: "specs/chart11_line.vl.json" }
 ];
-const stateViews = [], catViews = [];
+const stateViews = [], catViews = [], supplierViews = [];
 
 function stateOf(item) {
   let d = item && item.datum;
@@ -23,6 +23,11 @@ function stateOf(item) {
   if (d.state) return d.state;
   if (d.properties && d.properties.state) return d.properties.state;
   return "";
+}
+function supplierOf(item) {
+  let d = item && item.datum;
+  if (d && Array.isArray(d)) d = d[0];
+  return d?.partner || "";
 }
 function setSignal(views, name, value) {
   for (const v of views) { try { v.signal(name, value).run(); } catch (e) { /* chart has no such signal */ } }
@@ -39,6 +44,14 @@ async function main() {
         stateViews.push(result.view);
         result.view.addEventListener("mouseover", (_e, item) => { const s = stateOf(item); if (s) setSignal(stateViews, "hl", s); });
         result.view.addEventListener("mouseout", () => setSignal(stateViews, "hl", ""));
+      }
+      if (c.supplier) {
+        supplierViews.push(result.view);
+        result.view.addEventListener("mouseover", (_e, item) => {
+          const p = supplierOf(item);
+          if (p) setSignal(supplierViews, "supplier", p);
+        });
+        result.view.addEventListener("mouseout", () => setSignal(supplierViews, "supplier", ""));
       }
       if (c.cat) catViews.push(result.view);
     } catch (err) {
