@@ -1,0 +1,300 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map 4 (proportional symbol map): manufacturing output by state, 2025, in RM billion at constant 2015 prices (OpenDOSM annual real GDP by state and sector). Circle area = output. All manufacturing, not only clothing.",
+  "width": "container",
+  "height": 360,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "params": [
+    {
+      "name": "hl",
+      "value": ""
+    }
+  ],
+  "projection": {
+    "type": "mercator"
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 95.6,
+            "lat": 0.6
+          },
+          {
+            "lon": 120.4,
+            "lat": 7.6
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "opacity": 0,
+        "size": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "geo/malaysia-states.geojson",
+        "format": {
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eee7df"
+      },
+      "encoding": {
+        "stroke": {
+          "condition": {
+            "test": "datum.properties.state === hl",
+            "value": "#2d2926"
+          },
+          "value": "#fffaf4"
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.properties.state === hl",
+            "value": 2.6
+          },
+          "value": 0.9
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/manufacturing_2025.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.78,
+        "color": "#b66a3c",
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "value_bil",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "domain": [
+              0,
+              140
+            ],
+            "range": [
+              0,
+              1500
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "title": "Manufacturing output (RM billion, 2025)",
+            "values": [
+              10,
+              50,
+              100
+            ],
+            "titleLimit": 320,
+            "symbolFillColor": "#b66a3c",
+            "symbolOpacity": 0.78
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "value_bil",
+            "title": "Manufacturing output (RM billion)",
+            "format": ".1f"
+          },
+          {
+            "field": "share_pct",
+            "title": "Share of the state's economy (%)",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/manufacturing_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.state === 'Selangor'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "align": "right",
+        "dx": -20,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/manufacturing_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.state === 'Pulau Pinang'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "align": "right",
+        "dx": -12,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Penang"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/manufacturing_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.state === 'Johor'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "align": "left",
+        "dx": 16,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 112.6,
+            "lat": 6.6,
+            "t": "Selangor, Penang and Johor make 60% of the total"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#2d2926",
+        "align": "left",
+        "fontWeight": 700
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

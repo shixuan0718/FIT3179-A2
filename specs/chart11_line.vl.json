@@ -1,0 +1,333 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 11 (line chart): clothing and footwear prices against the price of all goods and services, January 2010 = 100, average of 16 states (OpenDOSM CPI by state).",
+  "width": "container",
+  "height": 360,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "data": {
+    "url": "data/cpi_rebased.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "title": null,
+            "format": "%Y",
+            "grid": false,
+            "tickCount": 9
+          }
+        },
+        "y": {
+          "field": "index100",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              80,
+              140
+            ],
+            "zero": false
+          },
+          "axis": {
+            "title": "Price level (January 2010 = 100)"
+          }
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "All goods & services",
+              "Clothing & footwear"
+            ],
+            "range": [
+              "#315c55",
+              "#7a2430"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "date",
+            "type": "temporal",
+            "title": "Month",
+            "format": "%b %Y"
+          },
+          {
+            "field": "series",
+            "title": "Prices of"
+          },
+          {
+            "field": "index100",
+            "title": "Price level",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "date": "2010-01-01",
+            "y": 100
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          2,
+          3
+        ],
+        "color": "#9a8f82"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              80,
+              140
+            ]
+          }
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "date": "2026-08-01",
+            "y": 135.2,
+            "t": "All goods & services +35%"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -4,
+        "dy": -10,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#315c55"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              80,
+              140
+            ]
+          }
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "date": "2026-08-01",
+            "y": 88.3,
+            "t": "Clothing & footwear −12%"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -4,
+        "dy": 14,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#7a2430"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              80,
+              140
+            ]
+          }
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "date": "2018-06-01",
+            "y0": 80,
+            "y1": 126
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "color": "#2d2926",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              80,
+              140
+            ]
+          }
+        },
+        "y2": {
+          "field": "y1"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "date": "2018-06-01",
+            "y": 128,
+            "t": "June 2018: GST cut to 0%,",
+            "t2": "clothing prices step down"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 11,
+        "color": "#2d2926",
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              80,
+              140
+            ]
+          }
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "date": "2018-06-01",
+            "y": 125,
+            "t2": "clothing prices step down"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 11,
+        "color": "#2d2926",
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              80,
+              140
+            ]
+          }
+        },
+        "text": {
+          "field": "t2"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 6 (parallel coordinates): each line is one state across three scales, 2024 (OpenDOSM HIES). Each scale runs from the lowest to the highest state on that measure.",
+  "width": "container",
+  "height": 360,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "params": [
+    {
+      "name": "hl",
+      "value": ""
+    }
+  ],
+  "data": {
+    "url": "data/hies_parallel_2024.csv"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/hies_axes.csv"
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#9a8f82",
+        "strokeWidth": 1.6
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "datum": 0
+        },
+        "y2": {
+          "datum": 1
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/hies_axes.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontWeight": 700,
+        "fontSize": 12,
+        "baseline": "bottom",
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "datum": 1.15
+        },
+        "text": {
+          "field": "axis"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/hies_axes.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "color": "#6b625a"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "datum": 1.065
+        },
+        "text": {
+          "field": "top"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/hies_axes.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "color": "#6b625a"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "datum": -0.07
+        },
+        "text": {
+          "field": "bottom"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.4,
+        "point": {
+          "filled": true,
+          "size": 26
+        }
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "field": "norm"
+        },
+        "detail": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Peninsular states",
+              "Sabah & Sarawak",
+              "Federal territories"
+            ],
+            "range": [
+              "#a39a8f",
+              "#7a2430",
+              "#315c55"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "stroke",
+            "symbolStrokeWidth": 3
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": "hl === '' || datum.state === hl",
+            "value": 0.92
+          },
+          "value": 0.12
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "axis",
+            "title": "Measure"
+          },
+          {
+            "field": "raw",
+            "title": "Value (RM or %)",
+            "format": ",.1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state === 'W.P. Kuala Lumpur' && datum.order === 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -9,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "field": "norm"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state === 'Kelantan' && datum.order === 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -9,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "field": "norm"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state === 'Sabah' && datum.order === 2"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "field": "norm"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state === 'W.P. Putrajaya' && datum.order === 2"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "field": "norm"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state === 'Sabah' && datum.order === 1"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -9,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              2.55
+            ]
+          },
+          "axis": null,
+          "field": "order"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.16,
+              1.2
+            ]
+          },
+          "axis": null,
+          "field": "norm"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    }
+  ]
+}

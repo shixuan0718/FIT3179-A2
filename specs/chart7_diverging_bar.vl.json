@@ -1,0 +1,231 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 7 (diverging bar chart): Malaysia's imports (left) and exports (right) of clothing and footwear in 2025, by product type, US$ million (UN Comtrade).",
+  "width": "container",
+  "height": 250,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "params": [
+    {
+      "name": "cat",
+      "value": "All"
+    }
+  ],
+  "data": {
+    "url": "data/trade_balance_category_2025.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.flow === 'Import' ? -datum.value_mil : datum.value_mil",
+      "as": "signed"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3,
+        "height": {
+          "band": 0.7
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": [
+            "Knitted apparel",
+            "Woven apparel",
+            "Footwear"
+          ],
+          "axis": {
+            "title": null,
+            "labelFontSize": 12,
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 8
+          }
+        },
+        "x": {
+          "field": "signed",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -2100,
+              2100
+            ]
+          },
+          "axis": {
+            "title": "← Malaysia buys (imports)          Malaysia sells (exports) →   US$ million, 2025",
+            "labelExpr": "format(abs(datum.value),',.0f')",
+            "values": [
+              -2000,
+              -1500,
+              -1000,
+              -500,
+              0,
+              500,
+              1000,
+              1500,
+              2000
+            ]
+          }
+        },
+        "color": {
+          "field": "flow",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Import",
+              "Export"
+            ],
+            "range": [
+              "#b66a3c",
+              "#315c55"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "test": "cat === 'All' || datum.category === cat",
+            "value": 1
+          },
+          "value": 0.25
+        },
+        "tooltip": [
+          {
+            "field": "category",
+            "title": "Product"
+          },
+          {
+            "field": "flow",
+            "title": "Direction"
+          },
+          {
+            "field": "value_mil",
+            "title": "US$ million",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.signed < 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926",
+        "align": "right",
+        "dx": -5
+      },
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": [
+            "Knitted apparel",
+            "Woven apparel",
+            "Footwear"
+          ]
+        },
+        "x": {
+          "field": "signed",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "value_mil",
+          "type": "quantitative",
+          "format": ",.0f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.signed >= 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926",
+        "align": "left",
+        "dx": 5
+      },
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": [
+            "Knitted apparel",
+            "Woven apparel",
+            "Footwear"
+          ]
+        },
+        "x": {
+          "field": "signed",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "value_mil",
+          "type": "quantitative",
+          "format": ",.0f"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#2d2926",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

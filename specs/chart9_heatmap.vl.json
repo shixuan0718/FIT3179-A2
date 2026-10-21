@@ -1,0 +1,312 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 9 (heatmap): change in clothing and footwear prices compared with the same month a year earlier, national average of 16 states, by year and month (OpenDOSM CPI by state). Teal = cheaper, red = dearer.",
+  "width": "container",
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "padding": {
+    "right": 120,
+    "left": 5,
+    "top": 5,
+    "bottom": 5
+  },
+  "data": {
+    "url": "data/clothing_inflation_monthly.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 2,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ],
+          "axis": {
+            "title": null,
+            "orient": "top",
+            "labelAngle": 0,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "y": {
+          "field": "year_label",
+          "type": "ordinal",
+          "sort": [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026 (to Aug)"
+          ],
+          "axis": {
+            "title": null,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 6
+          }
+        },
+        "color": {
+          "field": "yoy",
+          "type": "quantitative",
+          "title": "Price change vs a year earlier (%)",
+          "scale": {
+            "domain": [
+              -1.5,
+              0,
+              1.5
+            ],
+            "range": [
+              "#315c55",
+              "#f3ece4",
+              "#a91f35"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 220,
+            "gradientThickness": 10,
+            "titleLimit": 300,
+            "format": "+.1f"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year_label",
+            "title": "Year"
+          },
+          {
+            "field": "month",
+            "title": "Month"
+          },
+          {
+            "field": "yoy",
+            "title": "Change vs a year earlier (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month": "Dec",
+            "year_label": "2020",
+            "t": "falling fastest"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 22,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#6b625a"
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "y": {
+          "field": "year_label",
+          "type": "ordinal",
+          "sort": [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026 (to Aug)"
+          ]
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month": "Dec",
+            "year_label": "2023",
+            "t": "fall almost stops"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 22,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#6b625a"
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "y": {
+          "field": "year_label",
+          "type": "ordinal",
+          "sort": [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026 (to Aug)"
+          ]
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month": "Dec",
+            "year_label": "2024",
+            "t": "falling again"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 22,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#6b625a"
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "y": {
+          "field": "year_label",
+          "type": "ordinal",
+          "sort": [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026 (to Aug)"
+          ]
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

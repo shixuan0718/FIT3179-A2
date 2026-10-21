@@ -1,0 +1,278 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map 1 (choropleth): change in clothing and footwear prices over the 12 months to August 2026, by state (OpenDOSM CPI by state). Teal = cheaper, red = dearer.",
+  "width": "container",
+  "height": 340,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "params": [
+    {
+      "name": "hl",
+      "value": ""
+    }
+  ],
+  "projection": {
+    "type": "mercator"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "geo/malaysia-states.geojson",
+        "format": {
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.state",
+          "from": {
+            "data": {
+              "url": "data/clothing_cpi_latest.csv"
+            },
+            "key": "state",
+            "fields": [
+              "inflation_yoy"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "color": {
+          "field": "inflation_yoy",
+          "type": "quantitative",
+          "title": "Clothing prices vs a year ago (%)",
+          "scale": {
+            "domain": [
+              -3.5,
+              0,
+              3.5
+            ],
+            "range": [
+              "#315c55",
+              "#f3ece4",
+              "#a91f35"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 220,
+            "gradientThickness": 10,
+            "titleLimit": 300,
+            "format": "+.0f"
+          }
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum.properties.state === hl",
+            "value": "#2d2926"
+          },
+          "value": "#fffaf4"
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.properties.state === hl",
+            "value": 2.6
+          },
+          "value": 0.9
+        },
+        "tooltip": [
+          {
+            "field": "properties.state",
+            "title": "State"
+          },
+          {
+            "field": "inflation_yoy",
+            "title": "Price change vs a year ago (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 115.24,
+            "lat": 5.33,
+            "tx": 118.4,
+            "ty": 2.0,
+            "t": "Labuan: −3.3%",
+            "t2": "biggest fall"
+          },
+          {
+            "lon": 101.5,
+            "lat": 3.28,
+            "tx": 105.2,
+            "ty": 6.9,
+            "t": "Selangor: +1.6%",
+            "t2": "biggest rise"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#2d2926",
+            "strokeWidth": 0.8
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "longitude2": {
+              "field": "tx"
+            },
+            "latitude2": {
+              "field": "ty"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 22,
+            "color": "#2d2926"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "align": "left",
+            "dx": 4,
+            "dy": -6,
+            "color": "#2d2926"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "tx",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "ty",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "t"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11,
+            "align": "left",
+            "dx": 4,
+            "dy": 8,
+            "color": "#6b625a"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "tx",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "ty",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "t2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 99.6,
+            "lat": 1.0,
+            "t": "KL and Putrajaya are too small to see here;"
+          },
+          {
+            "lon": 99.6,
+            "lat": 0.55,
+            "t": "find them on the tile map next door."
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "color": "#6b625a",
+        "align": "left",
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

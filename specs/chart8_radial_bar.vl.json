@@ -1,0 +1,202 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 8 (radial bar chart): how sales at shops selling clothing, footwear and other goods compare with a typical month, 2023 to 2025 average, with the yearly growth trend removed (OpenDOSM wholesale and retail trade, MSIC group 477). The dashed ring is a typical month (100).",
+  "width": "container",
+  "height": 360,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "a": 0,
+            "b": 6.2832
+          }
+        ]
+      },
+      "mark": {
+        "type": "arc",
+        "innerRadius": 77.3,
+        "outerRadius": 78.7,
+        "color": "#2d2926",
+        "opacity": 0.55
+      },
+      "encoding": {
+        "theta": {
+          "field": "a",
+          "type": "quantitative",
+          "scale": null
+        },
+        "theta2": {
+          "field": "b"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/retail_seasonality_477.csv"
+      },
+      "mark": {
+        "type": "arc",
+        "cornerRadius": 2,
+        "stroke": "#fffaf4",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "scale": null,
+          "field": "theta0"
+        },
+        "theta2": {
+          "field": "theta1"
+        },
+        "radius": {
+          "field": "r_out",
+          "type": "quantitative",
+          "scale": null
+        },
+        "radius2": {
+          "field": "r_in"
+        },
+        "color": {
+          "field": "sign",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "busier than usual",
+              "quieter than usual"
+            ],
+            "range": [
+              "#7a2430",
+              "#315c55"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "title": null,
+            "direction": "horizontal"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "month",
+            "title": "Month"
+          },
+          {
+            "field": "label",
+            "title": "Compared with a typical month"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/retail_seasonality_477.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#5c534d"
+      },
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "scale": null,
+          "field": "theta_mid"
+        },
+        "radius": {
+          "field": "r_name",
+          "type": "quantitative",
+          "scale": null
+        },
+        "text": {
+          "field": "month"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/retail_seasonality_477.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.month === 'Dec' || datum.month === 'Jul' || datum.month === 'Apr'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926"
+      },
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "scale": null,
+          "field": "theta_mid"
+        },
+        "radius": {
+          "field": "r_label",
+          "type": "quantitative",
+          "scale": null
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "k": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "color": "#6b625a",
+        "lineBreak": "|",
+        "text": "Dashed ring|= typical month"
+      }
+    }
+  ]
+}

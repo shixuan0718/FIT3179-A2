@@ -1,0 +1,305 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map 3 (flow map): Malaysia's top ten clothing and footwear trade partners in 2025 (UN Comtrade, HS chapters 61, 62, 64). Line width = value of trade. Radio buttons switch between imports and exports.",
+  "width": "container",
+  "height": 520,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "params": [
+    {
+      "name": "flowDir",
+      "value": "Import",
+      "bind": {
+        "input": "radio",
+        "options": [
+          "Import",
+          "Export"
+        ],
+        "labels": [
+          "What Malaysia buys",
+          "What Malaysia sells"
+        ],
+        "name": "Show: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [
+      -100,
+      0,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "geo/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.name !== 'Antarctica'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eee7df",
+        "stroke": "#d6ccc1",
+        "strokeWidth": 0.4
+      }
+    },
+    {
+      "data": {
+        "url": "data/flows_2025.geojson",
+        "format": {
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.flow === flowDir"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "filled": false,
+        "strokeCap": "round",
+        "opacity": 0.72
+      },
+      "encoding": {
+        "stroke": {
+          "condition": {
+            "test": "flowDir === 'Import'",
+            "value": "#b66a3c"
+          },
+          "value": "#315c55"
+        },
+        "strokeWidth": {
+          "field": "properties.value_mil",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1200
+            ],
+            "range": [
+              1,
+              10
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "properties.partner",
+            "title": "Partner"
+          },
+          {
+            "field": "properties.value_mil",
+            "title": "Trade in 2025 (US$ million)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/flow_partners_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.flow === flowDir"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "size": 26,
+            "stroke": "#fffaf4",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "color": {
+              "condition": {
+                "test": "flowDir === 'Import'",
+                "value": "#b66a3c"
+              },
+              "value": "#315c55"
+            },
+            "tooltip": [
+              {
+                "field": "partner",
+                "title": "Partner"
+              },
+              {
+                "field": "value_mil",
+                "title": "Trade in 2025 (US$ million)",
+                "format": ",.0f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.label !== ''"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 11,
+            "fontWeight": 700,
+            "color": "#2d2926"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 101.69,
+            "lat": 3.14,
+            "t": "Malaysia"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "shape": "diamond",
+            "size": 110,
+            "filled": true,
+            "color": "#2d2926"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "fontWeight": 800,
+            "dx": -4,
+            "dy": 16,
+            "align": "right",
+            "color": "#2d2926"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "t"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": -168,
+            "lat": -48,
+            "t": "Thicker line = more money"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#6b625a",
+        "align": "left"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

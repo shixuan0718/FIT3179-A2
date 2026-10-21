@@ -1,0 +1,518 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map 2 (tile-grid cartogram): average monthly household income by state, 2024 (OpenDOSM HIES). One square per state, laid out roughly like the real map.",
+  "width": "container",
+  "height": 340,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "params": [
+    {
+      "name": "hl",
+      "value": ""
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "data/state_context_2024.csv"
+      },
+      "transform": [
+        {
+          "calculate": "+datum.tile_x+0.92",
+          "as": "x2"
+        },
+        {
+          "calculate": "+datum.tile_y+0.92",
+          "as": "y2"
+        },
+        {
+          "calculate": "+datum.tile_x+0.46",
+          "as": "cx"
+        },
+        {
+          "calculate": "+datum.tile_y+0.46",
+          "as": "cy"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 6
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "tile_x"
+        },
+        "x2": {
+          "field": "x2"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "tile_y"
+        },
+        "y2": {
+          "field": "y2"
+        },
+        "color": {
+          "field": "income_mean",
+          "type": "quantitative",
+          "title": "Average household income (RM a month)",
+          "scale": {
+            "domain": [
+              5000,
+              14000
+            ],
+            "range": [
+              "#f6ead2",
+              "#e2b872",
+              "#b66a3c",
+              "#7a2430"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 220,
+            "gradientThickness": 10,
+            "titleLimit": 300,
+            "format": ",.0f"
+          }
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum.state === hl",
+            "value": "#2d2926"
+          },
+          "value": "#fffaf4"
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.state === hl",
+            "value": 2.6
+          },
+          "value": 1.5
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "income_mean",
+            "title": "Average income (RM a month)",
+            "format": ",.0f"
+          },
+          {
+            "field": "expenditure_mean",
+            "title": "Average spending (RM a month)",
+            "format": ",.0f"
+          },
+          {
+            "field": "poverty",
+            "title": "Households in poverty (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_context_2024.csv"
+      },
+      "transform": [
+        {
+          "calculate": "+datum.tile_x+0.92",
+          "as": "x2"
+        },
+        {
+          "calculate": "+datum.tile_y+0.92",
+          "as": "y2"
+        },
+        {
+          "calculate": "+datum.tile_x+0.46",
+          "as": "cx"
+        },
+        {
+          "calculate": "+datum.tile_y+0.46",
+          "as": "cy"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight": 700,
+        "fontSize": 10.5,
+        "dy": -6
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "cx"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "cy"
+        },
+        "text": {
+          "field": "tile_label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.income_mean > 9000",
+            "value": "#fffaf4"
+          },
+          "value": "#2d2926"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_context_2024.csv"
+      },
+      "transform": [
+        {
+          "calculate": "+datum.tile_x+0.92",
+          "as": "x2"
+        },
+        {
+          "calculate": "+datum.tile_y+0.92",
+          "as": "y2"
+        },
+        {
+          "calculate": "+datum.tile_x+0.46",
+          "as": "cx"
+        },
+        {
+          "calculate": "+datum.tile_y+0.46",
+          "as": "cy"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "dy": 8
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "cx"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "cy"
+        },
+        "text": {
+          "field": "income_mean",
+          "type": "quantitative",
+          "format": ",.0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.income_mean > 9000",
+            "value": "#fffaf4"
+          },
+          "value": "#2d2926"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0.0,
+            "y": 5.55,
+            "t": "Peninsular Malaysia"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "color": "#6b625a",
+        "align": "left",
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "x"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "y"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 5.4,
+            "y": 3.35,
+            "t": "Borneo"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "color": "#6b625a",
+        "align": "left",
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "x"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "y"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 3.4,
+            "y": 3.15,
+            "t": "KL: RM13,985"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11.5,
+        "color": "#2d2926",
+        "align": "left",
+        "fontWeight": 700
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "x"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "y"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 3.4,
+            "y": 3.6,
+            "t": "Kelantan: RM5,265"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11.5,
+        "color": "#2d2926",
+        "align": "left",
+        "fontWeight": 700
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "x"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "y"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 3.4,
+            "y": 4.05,
+            "t": "KL earns 2.7× more"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#6b625a",
+        "align": "left"
+      },
+      "encoding": {
+        "x": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              7.4
+            ]
+          },
+          "axis": null,
+          "field": "x"
+        },
+        "y": {
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              5.7,
+              -0.1
+            ]
+          },
+          "axis": null,
+          "field": "y"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

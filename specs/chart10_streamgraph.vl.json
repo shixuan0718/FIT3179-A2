@@ -1,0 +1,261 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 10 (streamgraph): Malaysia's imports of clothing and footwear by product type, 2015 to 2025, US$ billion (UN Comtrade, HS chapters 61, 62, 64).",
+  "width": "container",
+  "height": 340,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": null,
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "titleFontWeight": 600,
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "gridColor": "#e9e1d8",
+      "domainColor": "#bcb1a7",
+      "tickColor": "#bcb1a7"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#39332f",
+      "titleColor": "#39332f",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titleFontWeight": 600
+    },
+    "text": {
+      "font": "Inter"
+    }
+  },
+  "params": [
+    {
+      "name": "cat",
+      "value": "All"
+    }
+  ],
+  "data": {
+    "url": "data/trade_imports_by_year.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              2015,
+              2025
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": null,
+            "format": "d",
+            "values": [
+              2015,
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "labelAngle": 0,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "value_bil",
+          "type": "quantitative",
+          "stack": "center",
+          "axis": null,
+          "scale": {
+            "domain": [
+              -0.1,
+              3.8
+            ]
+          }
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Knitted apparel",
+              "Woven apparel",
+              "Footwear"
+            ],
+            "range": [
+              "#7a2430",
+              "#b66a3c",
+              "#a8884a"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "title": null,
+            "direction": "horizontal"
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": "cat === 'All' || datum.category === cat",
+            "value": 0.93
+          },
+          "value": 0.22
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "category",
+            "title": "Product"
+          },
+          {
+            "field": "value_bil",
+            "title": "Imports (US$ billion)",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 2020,
+            "y0": 0.3,
+            "y1": 2.6
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "color": "#2d2926",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              3.8
+            ]
+          }
+        },
+        "y2": {
+          "field": "y1"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 2020,
+            "y": 2.8,
+            "t": "2020: lockdowns, imports fell 28%"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926",
+        "align": "center"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              3.8
+            ]
+          }
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 2025,
+            "y": 3.62,
+            "t": "2025: record US$3.3 billion"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2d2926",
+        "align": "right",
+        "dx": -2
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.1,
+              3.8
+            ]
+          }
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

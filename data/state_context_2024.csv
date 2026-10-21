@@ -1,0 +1,17 @@
+state,tile_label,tile_x,tile_y,region,income_mean,expenditure_mean,poverty
+Johor,Johor,2.2,4,Peninsular states,9484,5927,2.5
+Kedah,Kedah,1.0,0,Peninsular states,5793,4028,8.4
+Kelantan,Kelantan,2.2,0,Peninsular states,5265,3825,11.5
+Melaka,Melaka,1.0,4,Peninsular states,8686,6212,3.0
+Negeri Sembilan,N. Sembilan,1.0,3,Peninsular states,7305,5115,4.0
+Pahang,Pahang,2.2,1,Peninsular states,6066,4368,5.9
+Pulau Pinang,Penang,0.0,1,Peninsular states,9152,5850,1.9
+Perak,Perak,1.0,1,Peninsular states,6173,4232,6.9
+Perlis,Perlis,0.0,0,Peninsular states,5996,4084,3.6
+Selangor,Selangor,1.0,2,Peninsular states,13296,7266,0.9
+Terengganu,Terengganu,3.2,1,Peninsular states,7627,5219,5.8
+Sabah,Sabah,6.4,1,Sabah & Sarawak,6498,3547,17.7
+Sarawak,Sarawak,5.4,2,Sabah & Sarawak,6947,4281,8.4
+W.P. Kuala Lumpur,KL,2.2,2,Federal territories,13985,8178,1.0
+W.P. Labuan,Labuan,5.4,1,Federal territories,8555,4497,2.0
+W.P. Putrajaya,Putrajaya,2.2,3,Federal territories,13846,9186,0.2
