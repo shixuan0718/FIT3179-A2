@@ -1,0 +1,67 @@
+year,flow,category,value_bil,value_mil
+2015,Export,Woven apparel,0.359967583,360.0
+2015,Export,Footwear,0.150084465,150.1
+2015,Export,Knitted apparel,1.001985166,1002.0
+2015,Import,Knitted apparel,1.106723871,1106.7
+2015,Import,Woven apparel,0.725901462,725.9
+2015,Import,Footwear,0.501963454,502.0
+2016,Export,Woven apparel,0.33034606,330.3
+2016,Export,Footwear,0.172429648,172.4
+2016,Export,Knitted apparel,0.966868937,966.9
+2016,Import,Knitted apparel,1.097991938,1098.0
+2016,Import,Woven apparel,0.796960273,797.0
+2016,Import,Footwear,0.640112683,640.1
+2017,Import,Knitted apparel,0.8999020351799999,899.9
+2017,Import,Footwear,0.631809948689,631.8
+2017,Import,Woven apparel,0.683460415154,683.5
+2017,Export,Knitted apparel,0.953268029248,953.3
+2017,Export,Woven apparel,0.352005505294,352.0
+2017,Export,Footwear,0.151995400474,152.0
+2018,Import,Footwear,0.697036473237,697.0
+2018,Export,Woven apparel,0.342895307643,342.9
+2018,Export,Footwear,0.147413925085,147.4
+2018,Export,Knitted apparel,0.967118894648,967.1
+2018,Import,Woven apparel,0.7245397728559999,724.5
+2018,Import,Knitted apparel,1.012599658405,1012.6
+2019,Import,Knitted apparel,0.85987842022,859.9
+2019,Import,Woven apparel,0.650430275355,650.4
+2019,Import,Footwear,0.6256158440540001,625.6
+2019,Export,Knitted apparel,1.033157126252,1033.2
+2019,Export,Woven apparel,0.355754896392,355.8
+2019,Export,Footwear,0.163341127173,163.3
+2020,Export,Knitted apparel,0.933191845326,933.2
+2020,Export,Footwear,0.150429780176,150.4
+2020,Export,Woven apparel,0.311145953231,311.1
+2020,Import,Footwear,0.423489621291,423.5
+2020,Import,Knitted apparel,0.64505003395,645.1
+2020,Import,Woven apparel,0.4733390491679999,473.3
+2021,Import,Knitted apparel,0.759134794279,759.1
+2021,Import,Woven apparel,0.447901351997,447.9
+2021,Import,Footwear,0.4388140554549999,438.8
+2021,Export,Woven apparel,0.245665750579,245.7
+2021,Export,Footwear,0.182259580652,182.3
+2021,Export,Knitted apparel,0.962875135061,962.9
+2022,Export,Knitted apparel,1.063875214032,1063.9
+2022,Export,Footwear,0.1770828400469999,177.1
+2022,Export,Woven apparel,0.287542376121,287.5
+2022,Import,Woven apparel,0.684342797707,684.3
+2022,Import,Footwear,0.620864276882,620.9
+2022,Import,Knitted apparel,1.371446426813,1371.4
+2023,Export,Woven apparel,0.276171202031,276.2
+2023,Export,Footwear,0.224445622594,224.4
+2023,Export,Knitted apparel,0.99775274501,997.8
+2023,Import,Woven apparel,0.6296191846870001,629.6
+2023,Import,Knitted apparel,1.161207610691,1161.2
+2023,Import,Footwear,0.6825427748530001,682.5
+2024,Export,Knitted apparel,0.995346777833,995.3
+2024,Export,Woven apparel,0.2972832389279999,297.3
+2024,Export,Footwear,0.2353826300099999,235.4
+2024,Import,Knitted apparel,1.399083231812,1399.1
+2024,Import,Woven apparel,0.739001929338,739.0
+2024,Import,Footwear,0.7830532255,783.1
+2025,Export,Knitted apparel,1.64151364031,1641.5
+2025,Export,Woven apparel,0.418551119489,418.6
+2025,Export,Footwear,0.285435565787,285.4
+2025,Import,Knitted apparel,1.74533574251,1745.3
+2025,Import,Woven apparel,0.788382375231,788.4
+2025,Import,Footwear,0.796423155699,796.4

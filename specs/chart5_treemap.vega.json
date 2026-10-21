@@ -1,0 +1,324 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Chart 5 (treemap): Malaysia's 2025 imports of clothing and footwear. Area = value in US$ million; colour = product type; each block is one exporting country (UN Comtrade). Layout is calculated by Vega's squarified treemap.",
+  "autosize": "none",
+  "height": 440,
+  "padding": 0,
+  "signals": [
+    {
+      "name": "width",
+      "init": "containerSize()[0]",
+      "on": [
+        {
+          "events": {
+            "source": "window",
+            "type": "resize"
+          },
+          "update": "containerSize()[0]"
+        }
+      ]
+    },
+    {
+      "name": "headerH",
+      "value": 26
+    },
+    {
+      "name": "cat",
+      "value": "All"
+    }
+  ],
+  "data": [
+    {
+      "name": "tree",
+      "url": "data/treemap_imports_2025.json",
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "size",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "method": "squarify",
+          "ratio": 1.1,
+          "round": true,
+          "paddingInner": 2,
+          "paddingOuter": 0,
+          "paddingTop": {
+            "signal": "headerH"
+          },
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.children === 0"
+        }
+      ]
+    },
+    {
+      "name": "groups",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "Knitted apparel",
+        "Woven apparel",
+        "Footwear"
+      ],
+      "range": [
+        "#7a2430",
+        "#b66a3c",
+        "#a8884a"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "groups"
+      },
+      "encode": {
+        "enter": {
+          "cornerRadius": {
+            "value": 3
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "color",
+            "field": "name"
+          },
+          "fillOpacity": [
+            {
+              "test": "cat === 'All' || datum.name === cat",
+              "value": 1
+            },
+            {
+              "value": 0.25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "stroke": {
+            "value": "#fffaf4"
+          },
+          "strokeWidth": {
+            "value": 1.5
+          },
+          "cornerRadius": {
+            "value": 2
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "color",
+            "field": "parent"
+          },
+          "fillOpacity": [
+            {
+              "test": "cat !== 'All' && datum.parent !== cat",
+              "value": 0.12
+            },
+            {
+              "test": "datum.name === 'Other countries'",
+              "value": 0.5
+            },
+            {
+              "value": 0.85
+            }
+          ],
+          "tooltip": {
+            "signal": "{'Product': datum.parent, 'Exporting country': datum.name, 'Malaysia imported (US$ million)': format(datum.size, ',.0f')}"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "groups"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 8"
+          },
+          "y": {
+            "signal": "datum.y0 + 17"
+          },
+          "text": {
+            "signal": "datum.name + '  ·  US$' + format(datum.total, ',.0f') + ' million'"
+          },
+          "fill": {
+            "value": "#ffffff"
+          },
+          "font": {
+            "value": "Inter"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 12.5
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 12"
+          },
+          "fillOpacity": [
+            {
+              "test": "cat === 'All' || datum.name === cat",
+              "value": 1
+            },
+            {
+              "value": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 7"
+          },
+          "y": {
+            "signal": "datum.y0 + 16"
+          },
+          "text": {
+            "signal": "(datum.x1 - datum.x0 > 54 && datum.y1 - datum.y0 > 28) ? datum.name : ''"
+          },
+          "fill": {
+            "value": "#ffffff"
+          },
+          "font": {
+            "value": "Inter"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 10"
+          },
+          "fillOpacity": [
+            {
+              "test": "cat !== 'All' && datum.parent !== cat",
+              "value": 0.3
+            },
+            {
+              "value": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 7"
+          },
+          "y": {
+            "signal": "datum.y0 + 31"
+          },
+          "text": {
+            "signal": "(datum.x1 - datum.x0 > 66 && datum.y1 - datum.y0 > 44) ? 'US$' + format(datum.size, ',.0f') + 'M' : ''"
+          },
+          "fill": {
+            "value": "#ffffff"
+          },
+          "font": {
+            "value": "Inter"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 10"
+          },
+          "fillOpacity": [
+            {
+              "test": "cat !== 'All' && datum.parent !== cat",
+              "value": 0.3
+            },
+            {
+              "value": 0.92
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

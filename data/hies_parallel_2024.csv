@@ -1,0 +1,49 @@
+state,axis,order,raw,norm,region
+Johor,Household income,0,9484.0,0.4838,Peninsular states
+Kedah,Household income,0,5793.0,0.0606,Peninsular states
+Kelantan,Household income,0,5265.0,0.0,Peninsular states
+Melaka,Household income,0,8686.0,0.3923,Peninsular states
+Negeri Sembilan,Household income,0,7305.0,0.2339,Peninsular states
+Pahang,Household income,0,6066.0,0.0919,Peninsular states
+Pulau Pinang,Household income,0,9152.0,0.4458,Peninsular states
+Perak,Household income,0,6173.0,0.1041,Peninsular states
+Perlis,Household income,0,5996.0,0.0838,Peninsular states
+Selangor,Household income,0,13296.0,0.921,Peninsular states
+Terengganu,Household income,0,7627.0,0.2709,Peninsular states
+Sabah,Household income,0,6498.0,0.1414,Sabah & Sarawak
+Sarawak,Household income,0,6947.0,0.1929,Sabah & Sarawak
+W.P. Kuala Lumpur,Household income,0,13985.0,1.0,Federal territories
+W.P. Labuan,Household income,0,8555.0,0.3773,Federal territories
+W.P. Putrajaya,Household income,0,13846.0,0.9841,Federal territories
+Johor,Household spending,1,5927.0,0.4221,Peninsular states
+Kedah,Household spending,1,4028.0,0.0853,Peninsular states
+Kelantan,Household spending,1,3825.0,0.0493,Peninsular states
+Melaka,Household spending,1,6212.0,0.4726,Peninsular states
+Negeri Sembilan,Household spending,1,5115.0,0.2781,Peninsular states
+Pahang,Household spending,1,4368.0,0.1456,Peninsular states
+Pulau Pinang,Household spending,1,5850.0,0.4084,Peninsular states
+Perak,Household spending,1,4232.0,0.1215,Peninsular states
+Perlis,Household spending,1,4084.0,0.0952,Peninsular states
+Selangor,Household spending,1,7266.0,0.6595,Peninsular states
+Terengganu,Household spending,1,5219.0,0.2965,Peninsular states
+Sabah,Household spending,1,3547.0,0.0,Sabah & Sarawak
+Sarawak,Household spending,1,4281.0,0.1302,Sabah & Sarawak
+W.P. Kuala Lumpur,Household spending,1,8178.0,0.8212,Federal territories
+W.P. Labuan,Household spending,1,4497.0,0.1685,Federal territories
+W.P. Putrajaya,Household spending,1,9186.0,1.0,Federal territories
+Johor,Households in poverty,2,2.5,0.1314,Peninsular states
+Kedah,Households in poverty,2,8.4,0.4686,Peninsular states
+Kelantan,Households in poverty,2,11.5,0.6457,Peninsular states
+Melaka,Households in poverty,2,3.0,0.16,Peninsular states
+Negeri Sembilan,Households in poverty,2,4.0,0.2171,Peninsular states
+Pahang,Households in poverty,2,5.9,0.3257,Peninsular states
+Pulau Pinang,Households in poverty,2,1.9,0.0971,Peninsular states
+Perak,Households in poverty,2,6.9,0.3829,Peninsular states
+Perlis,Households in poverty,2,3.6,0.1943,Peninsular states
+Selangor,Households in poverty,2,0.9,0.04,Peninsular states
+Terengganu,Households in poverty,2,5.8,0.32,Peninsular states
+Sabah,Households in poverty,2,17.7,1.0,Sabah & Sarawak
+Sarawak,Households in poverty,2,8.4,0.4686,Sabah & Sarawak
+W.P. Kuala Lumpur,Households in poverty,2,1.0,0.0457,Federal territories
+W.P. Labuan,Households in poverty,2,2.0,0.1029,Federal territories
+W.P. Putrajaya,Households in poverty,2,0.2,0.0,Federal territories

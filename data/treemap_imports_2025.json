@@ -1,0 +1,177 @@
+[
+ {
+  "id": "root",
+  "parent": null,
+  "name": "Imports",
+  "size": 0,
+  "total": 0
+ },
+ {
+  "id": "Footwear",
+  "parent": "root",
+  "name": "Footwear",
+  "size": 0,
+  "total": 796.4
+ },
+ {
+  "id": "Footwear|China",
+  "parent": "Footwear",
+  "name": "China",
+  "size": 300.3,
+  "total": 0
+ },
+ {
+  "id": "Footwear|Viet Nam",
+  "parent": "Footwear",
+  "name": "Viet Nam",
+  "size": 200.2,
+  "total": 0
+ },
+ {
+  "id": "Footwear|Indonesia",
+  "parent": "Footwear",
+  "name": "Indonesia",
+  "size": 92.2,
+  "total": 0
+ },
+ {
+  "id": "Footwear|Singapore",
+  "parent": "Footwear",
+  "name": "Singapore",
+  "size": 70.6,
+  "total": 0
+ },
+ {
+  "id": "Footwear|Italy",
+  "parent": "Footwear",
+  "name": "Italy",
+  "size": 32.0,
+  "total": 0
+ },
+ {
+  "id": "Footwear|Cambodia",
+  "parent": "Footwear",
+  "name": "Cambodia",
+  "size": 18.3,
+  "total": 0
+ },
+ {
+  "id": "Footwear|Other",
+  "parent": "Footwear",
+  "name": "Other countries",
+  "size": 82.8,
+  "total": 0
+ },
+ {
+  "id": "Knitted apparel",
+  "parent": "root",
+  "name": "Knitted apparel",
+  "size": 0,
+  "total": 1745.3
+ },
+ {
+  "id": "Knitted apparel|China",
+  "parent": "Knitted apparel",
+  "name": "China",
+  "size": 547.1,
+  "total": 0
+ },
+ {
+  "id": "Knitted apparel|Bangladesh",
+  "parent": "Knitted apparel",
+  "name": "Bangladesh",
+  "size": 295.2,
+  "total": 0
+ },
+ {
+  "id": "Knitted apparel|Singapore",
+  "parent": "Knitted apparel",
+  "name": "Singapore",
+  "size": 242.1,
+  "total": 0
+ },
+ {
+  "id": "Knitted apparel|Viet Nam",
+  "parent": "Knitted apparel",
+  "name": "Viet Nam",
+  "size": 227.7,
+  "total": 0
+ },
+ {
+  "id": "Knitted apparel|India",
+  "parent": "Knitted apparel",
+  "name": "India",
+  "size": 100.4,
+  "total": 0
+ },
+ {
+  "id": "Knitted apparel|Indonesia",
+  "parent": "Knitted apparel",
+  "name": "Indonesia",
+  "size": 72.9,
+  "total": 0
+ },
+ {
+  "id": "Knitted apparel|Other",
+  "parent": "Knitted apparel",
+  "name": "Other countries",
+  "size": 260.0,
+  "total": 0
+ },
+ {
+  "id": "Woven apparel",
+  "parent": "root",
+  "name": "Woven apparel",
+  "size": 0,
+  "total": 788.4
+ },
+ {
+  "id": "Woven apparel|China",
+  "parent": "Woven apparel",
+  "name": "China",
+  "size": 336.0,
+  "total": 0
+ },
+ {
+  "id": "Woven apparel|Singapore",
+  "parent": "Woven apparel",
+  "name": "Singapore",
+  "size": 68.5,
+  "total": 0
+ },
+ {
+  "id": "Woven apparel|Viet Nam",
+  "parent": "Woven apparel",
+  "name": "Viet Nam",
+  "size": 65.4,
+  "total": 0
+ },
+ {
+  "id": "Woven apparel|Bangladesh",
+  "parent": "Woven apparel",
+  "name": "Bangladesh",
+  "size": 57.0,
+  "total": 0
+ },
+ {
+  "id": "Woven apparel|India",
+  "parent": "Woven apparel",
+  "name": "India",
+  "size": 51.8,
+  "total": 0
+ },
+ {
+  "id": "Woven apparel|Indonesia",
+  "parent": "Woven apparel",
+  "name": "Indonesia",
+  "size": 31.3,
+  "total": 0
+ },
+ {
+  "id": "Woven apparel|Other",
+  "parent": "Woven apparel",
+  "name": "Other countries",
+  "size": 178.4,
+  "total": 0
+ }
+]

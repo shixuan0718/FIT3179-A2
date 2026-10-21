@@ -1,0 +1,21 @@
+flow,partner,lon,lat,value_mil,label_lon,label_lat,label
+Import,China,104.2,35.86,1183.4,104.2,41.86,China
+Import,Viet Nam,108.28,14.06,493.3,122.28,17.060000000000002,Viet Nam
+Import,Singapore,103.82,1.35,381.2,109.82,-6.65,Singapore
+Import,Bangladesh,90.36,23.69,355.6,81.36,30.69,Bangladesh
+Import,Indonesia,113.92,-0.79,196.4,113.92,5.21,
+Import,India,78.96,20.59,169.9,71.96,26.59,India
+Import,Cambodia,104.99,12.57,88.5,104.99,18.57,
+Import,Italy,12.57,41.87,78.8,12.57,47.87,Italy
+Import,Hong Kong,114.17,22.32,47.9,114.17,28.32,
+Import,Thailand,100.99,15.87,36.7,100.99,21.869999999999997,
+Export,USA,-95.71,37.09,479.2,-95.71,43.09,USA
+Export,Singapore,103.82,1.35,374.6,109.82,-6.65,Singapore
+Export,Japan,138.25,36.2,175.1,141.25,42.2,Japan
+Export,Türkiye,35.24,38.96,122.5,35.24,44.96,Türkiye
+Export,Australia,133.78,-25.27,102.1,133.78,-32.269999999999996,Australia
+Export,UAE,53.85,23.42,94.4,53.85,29.42,UAE
+Export,Hong Kong,114.17,22.32,80.9,114.17,28.32,
+Export,Philippines,121.77,12.88,73.0,121.77,18.880000000000003,
+Export,France,2.21,46.23,72.5,2.21,52.23,
+Export,Canada,-106.35,56.13,69.1,-106.35,62.13,
