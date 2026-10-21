@@ -5,13 +5,13 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-
 body:before{content:"";display:block;height:8px;background:linear-gradient(90deg,var(--burg),var(--rust),var(--gold),var(--sage))}
 h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;margin:0}
 a{color:var(--burg)}
-.hero,main,.foot-grid{max-width:1180px;margin:0 auto;padding-left:32px;padding-right:32px}
+.hero,main,.foot-grid{max-width:1260px;margin:0 auto;padding-left:32px;padding-right:32px}
 .hero{padding-top:64px;padding-bottom:48px;border-bottom:1px solid var(--line)}
 .hero-kicker{font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--burg)}
 h1{font-size:clamp(54px,8vw,104px);line-height:.9;letter-spacing:-.035em;margin:18px 0 16px}
 .hero-sub{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(22px,2.6vw,32px);line-height:1.15;max-width:860px;color:#4d4540;margin:0}
 .hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:44px;margin-top:36px;align-items:start}
-.lede{font-size:17px;color:var(--muted);margin:0 0 26px;max-width:62ch}
+.lede{font-size:16px;color:var(--muted);margin:0 0 22px;max-width:58ch}
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .hero-stats div{border-top:1px solid var(--ink);padding-top:8px}
 .hero-stats b{display:block;font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:24px;line-height:1.15}
@@ -23,7 +23,7 @@ h1{font-size:clamp(54px,8vw,104px);line-height:.9;letter-spacing:-.035em;margin:
 .section-heading>span{font-family:"DM Serif Display",Georgia,serif;font-size:34px;color:var(--rust);line-height:1.1}
 .section-heading p{margin:0 0 2px;font-size:12px;letter-spacing:.16em;font-weight:800;text-transform:uppercase;color:var(--muted)}
 .section-heading h2{font-size:clamp(28px,3.4vw,42px);line-height:1.08;max-width:820px}
-.section-copy{max-width:72ch;color:var(--muted);margin:0 0 24px;font-size:16px}
+.section-copy{max-width:64ch;color:var(--muted);margin:0 0 18px;font-size:15px;line-height:1.55}
 .picker{margin:0 0 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:14px;font-weight:600}
 .picker select{font:inherit;font-weight:500;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
 .grid{display:grid;gap:24px;align-items:stretch}
@@ -35,12 +35,12 @@ h1{font-size:clamp(54px,8vw,104px);line-height:.9;letter-spacing:-.035em;margin:
 .grid.s2 .tall{grid-row:span 2}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin:0;box-shadow:0 8px 30px rgba(50,35,25,.045);min-width:0;display:flex;flex-direction:column}
 .card.wide{margin-top:24px}
-.card h3{font-size:24px;line-height:1.15;margin:0 0 6px}
-.how{margin:0 0 10px;font-size:14px;color:var(--muted);line-height:1.5;max-width:70ch}
+.card h3{font-size:22px;line-height:1.15;margin:0 0 6px}
+.how{margin:0 0 8px;font-size:13px;color:var(--muted);line-height:1.45;max-width:58ch}
 .how b{color:var(--ink)}
-.vis{width:100%;min-width:0;min-height:300px;position:relative;flex:1 0 auto}
-.vis.short{min-height:250px;flex:0 0 auto}
-.annotation{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15px;line-height:1.55;color:var(--muted)}
+.vis{width:100%;min-width:0;min-height:340px;position:relative;flex:1 0 auto}
+.vis.short{min-height:320px;flex:0 0 auto}
+.annotation{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line);font-size:14px;line-height:1.5;color:var(--muted)}
 .annotation b{color:var(--ink)}
 .spec{margin-top:8px;font-size:13px;color:var(--muted)}
 .takeaway{background:var(--cream);border-left:4px solid var(--burg);border-radius:0 14px 14px 0;padding:24px 26px}

@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Map 1 (choropleth): change in clothing and footwear prices over the 12 months to August 2026, by state (OpenDOSM CPI by state). Teal = cheaper, red = dearer.",
   "width": "container",
-  "height": 340,
+  "height": 380,
   "autosize": {
     "type": "fit",
     "contains": "padding",
@@ -135,7 +135,7 @@
             "lat": 5.33,
             "tx": 118.4,
             "ty": 2.0,
-            "t": "Labuan: −3.3%",
+            "t": "Labuan: \u22123.3%",
             "t2": "biggest fall"
           },
           {

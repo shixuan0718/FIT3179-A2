@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Map 2 (tile-grid cartogram): average monthly household income by state, 2024 (OpenDOSM HIES). One square per state, laid out roughly like the real map.",
   "width": "container",
-  "height": 340,
+  "height": 380,
   "autosize": {
     "type": "fit",
     "contains": "padding",
@@ -476,7 +476,7 @@
           {
             "x": 3.4,
             "y": 4.05,
-            "t": "KL earns 2.7× more"
+            "t": "KL earns 2.7\u00d7 more"
           }
         ]
       },

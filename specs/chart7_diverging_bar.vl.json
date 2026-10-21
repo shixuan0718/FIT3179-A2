@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Chart 7 (diverging bar chart): Malaysia's imports (left) and exports (right) of clothing and footwear in 2025, by product type, US$ million (UN Comtrade).",
   "width": "container",
-  "height": 250,
+  "height": 320,
   "autosize": {
     "type": "fit",
     "contains": "padding",
@@ -90,7 +90,7 @@
             ]
           },
           "axis": {
-            "title": "← Malaysia buys (imports)          Malaysia sells (exports) →   US$ million, 2025",
+            "title": "\u2190 Malaysia buys (imports)          Malaysia sells (exports) \u2192   US$ million, 2025",
             "labelExpr": "format(abs(datum.value),',.0f')",
             "values": [
               -2000,

@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Fashion-only proportional-symbol world map. Symbol area indicates 2025 apparel and footwear import value by the ten leading supplier countries, calculated from the supplied UN Comtrade HS 61/62/64 source. Symbol colour shows the largest HS chapter for each supplier.",
   "width": "container",
-  "height": 430,
+  "height": 500,
   "autosize": {
     "type": "fit",
     "contains": "padding",

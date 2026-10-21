@@ -1,10 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Parallel coordinates comparing the 2025 HS 61/62/64 product shares within each of Malaysia’s eight biggest named clothing and footwear import suppliers; values from original UN Comtrade export file.",
+  "description": "100% stacked bars comparing the product mix of Malaysia's eight largest named apparel and footwear import suppliers in 2025.",
   "width": "container",
-  "height": 330,
+  "height": {
+    "step": 34
+  },
   "autosize": {
-    "type": "fit",
+    "type": "fit-x",
     "contains": "padding",
     "resize": true
   },
@@ -33,10 +35,8 @@
       "titleColor": "#39332f",
       "labelFontSize": 11,
       "titleFontSize": 11,
-      "titleFontWeight": 600
-    },
-    "text": {
-      "font": "Inter"
+      "titleFontWeight": 600,
+      "orient": "bottom"
     }
   },
   "params": [
@@ -46,176 +46,225 @@
     }
   ],
   "data": {
-    "url": "data/supplier_profiles_2025.csv"
+    "values": [
+      {
+        "partner": "China",
+        "category": "Knitted apparel",
+        "share_pct": 46.23,
+        "category_mil": 547.1,
+        "total_mil": 1183.4
+      },
+      {
+        "partner": "China",
+        "category": "Woven apparel",
+        "share_pct": 28.39,
+        "category_mil": 336.0,
+        "total_mil": 1183.4
+      },
+      {
+        "partner": "China",
+        "category": "Footwear",
+        "share_pct": 25.38,
+        "category_mil": 300.3,
+        "total_mil": 1183.4
+      },
+      {
+        "partner": "Viet Nam",
+        "category": "Knitted apparel",
+        "share_pct": 46.15,
+        "category_mil": 227.7,
+        "total_mil": 493.3
+      },
+      {
+        "partner": "Viet Nam",
+        "category": "Woven apparel",
+        "share_pct": 13.26,
+        "category_mil": 65.4,
+        "total_mil": 493.3
+      },
+      {
+        "partner": "Viet Nam",
+        "category": "Footwear",
+        "share_pct": 40.59,
+        "category_mil": 200.2,
+        "total_mil": 493.3
+      },
+      {
+        "partner": "Singapore",
+        "category": "Knitted apparel",
+        "share_pct": 63.49,
+        "category_mil": 242.1,
+        "total_mil": 381.2
+      },
+      {
+        "partner": "Singapore",
+        "category": "Woven apparel",
+        "share_pct": 17.98,
+        "category_mil": 68.5,
+        "total_mil": 381.2
+      },
+      {
+        "partner": "Singapore",
+        "category": "Footwear",
+        "share_pct": 18.53,
+        "category_mil": 70.6,
+        "total_mil": 381.2
+      },
+      {
+        "partner": "Bangladesh",
+        "category": "Knitted apparel",
+        "share_pct": 83.0,
+        "category_mil": 295.2,
+        "total_mil": 355.6
+      },
+      {
+        "partner": "Bangladesh",
+        "category": "Woven apparel",
+        "share_pct": 16.03,
+        "category_mil": 57.0,
+        "total_mil": 355.6
+      },
+      {
+        "partner": "Bangladesh",
+        "category": "Footwear",
+        "share_pct": 0.97,
+        "category_mil": 3.5,
+        "total_mil": 355.6
+      },
+      {
+        "partner": "Indonesia",
+        "category": "Knitted apparel",
+        "share_pct": 37.11,
+        "category_mil": 72.9,
+        "total_mil": 196.4
+      },
+      {
+        "partner": "Indonesia",
+        "category": "Woven apparel",
+        "share_pct": 15.96,
+        "category_mil": 31.3,
+        "total_mil": 196.4
+      },
+      {
+        "partner": "Indonesia",
+        "category": "Footwear",
+        "share_pct": 46.93,
+        "category_mil": 92.2,
+        "total_mil": 196.4
+      },
+      {
+        "partner": "India",
+        "category": "Knitted apparel",
+        "share_pct": 59.05,
+        "category_mil": 100.4,
+        "total_mil": 169.9
+      },
+      {
+        "partner": "India",
+        "category": "Woven apparel",
+        "share_pct": 30.47,
+        "category_mil": 51.8,
+        "total_mil": 169.9
+      },
+      {
+        "partner": "India",
+        "category": "Footwear",
+        "share_pct": 10.48,
+        "category_mil": 17.8,
+        "total_mil": 169.9
+      },
+      {
+        "partner": "Cambodia",
+        "category": "Knitted apparel",
+        "share_pct": 47.11,
+        "category_mil": 41.7,
+        "total_mil": 88.5
+      },
+      {
+        "partner": "Cambodia",
+        "category": "Woven apparel",
+        "share_pct": 32.24,
+        "category_mil": 28.5,
+        "total_mil": 88.5
+      },
+      {
+        "partner": "Cambodia",
+        "category": "Footwear",
+        "share_pct": 20.65,
+        "category_mil": 18.3,
+        "total_mil": 88.5
+      },
+      {
+        "partner": "Italy",
+        "category": "Knitted apparel",
+        "share_pct": 26.09,
+        "category_mil": 20.6,
+        "total_mil": 78.8
+      },
+      {
+        "partner": "Italy",
+        "category": "Woven apparel",
+        "share_pct": 33.3,
+        "category_mil": 26.2,
+        "total_mil": 78.8
+      },
+      {
+        "partner": "Italy",
+        "category": "Footwear",
+        "share_pct": 40.61,
+        "category_mil": 32.0,
+        "total_mil": 78.8
+      }
+    ]
   },
+  "transform": [
+    {
+      "calculate": "datum.share_pct/100",
+      "as": "share"
+    },
+    {
+      "calculate": "format(datum.total_mil, ',.0f') + 'm'",
+      "as": "total_label"
+    }
+  ],
   "layer": [
     {
-      "data": {
-        "url": "data/supplier_profile_axes.csv"
-      },
       "mark": {
-        "type": "rule",
-        "color": "#b9ada1",
-        "strokeWidth": 1.2
+        "type": "bar",
+        "cornerRadius": 2
       },
       "encoding": {
-        "x": {
-          "field": "order",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.4,
-              2.4
-            ]
-          },
-          "axis": null
-        },
         "y": {
-          "datum": 0,
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -20,
-              120
-            ]
-          },
-          "axis": null
-        },
-        "y2": {
-          "datum": 100
-        }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {
-            "x": 0,
-            "y": 25
-          },
-          {
-            "x": 0,
-            "y": 50
-          },
-          {
-            "x": 0,
-            "y": 75
-          }
-        ]
-      },
-      "mark": {
-        "type": "rule",
-        "color": "#ede5dd",
-        "strokeDash": [
-          3,
-          3
-        ]
-      },
-      "encoding": {
-        "x": {
-          "datum": 0,
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.4,
-              2.4
-            ]
-          },
-          "axis": null
-        },
-        "x2": {
-          "datum": 2
-        },
-        "y": {
-          "field": "y",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -20,
-              120
-            ]
-          },
-          "axis": null
-        }
-      }
-    },
-    {
-      "data": {
-        "url": "data/supplier_profile_axes.csv"
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 12,
-        "fontWeight": 700,
-        "color": "#2d2926",
-        "baseline": "bottom"
-      },
-      "encoding": {
-        "x": {
-          "field": "order",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.4,
-              2.4
-            ]
-          },
-          "axis": null
-        },
-        "y": {
-          "datum": 108,
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -20,
-              120
-            ]
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "category"
-        }
-      }
-    },
-    {
-      "mark": {
-        "type": "line",
-        "point": {
-          "filled": true,
-          "size": 40
-        },
-        "strokeWidth": 2.7
-      },
-      "encoding": {
-        "x": {
-          "field": "order",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.4,
-              2.4
-            ]
-          },
-          "axis": null
-        },
-        "y": {
-          "field": "share_pct",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -20,
-              120
-            ]
-          },
-          "axis": null
-        },
-        "detail": {
           "field": "partner",
-          "type": "nominal"
+          "type": "nominal",
+          "sort": [
+            "China",
+            "Viet Nam",
+            "Singapore",
+            "Bangladesh",
+            "Indonesia",
+            "India",
+            "Cambodia",
+            "Italy"
+          ],
+          "title": null,
+          "axis": {
+            "labelLimit": 110
+          }
+        },
+        "x": {
+          "field": "share",
+          "type": "quantitative",
+          "stack": "zero",
+          "title": "Share of that supplier's 2025 fashion exports to Malaysia",
+          "axis": {
+            "format": ".0%",
+            "grid": true,
+            "tickCount": 6
+          }
         },
         "color": {
-          "field": "dominant",
+          "field": "category",
           "type": "nominal",
           "scale": {
             "domain": [
@@ -230,18 +279,16 @@
             ]
           },
           "legend": {
-            "orient": "bottom",
-            "direction": "horizontal",
-            "title": "Largest category for each supplier",
-            "labelLimit": 145
+            "title": null,
+            "direction": "horizontal"
           }
         },
         "opacity": {
           "condition": {
             "test": "supplier === '' || datum.partner === supplier",
-            "value": 0.88
+            "value": 0.95
           },
-          "value": 0.09
+          "value": 0.18
         },
         "tooltip": [
           {
@@ -264,52 +311,67 @@
           },
           {
             "field": "total_mil",
-            "title": "All three product groups (US$ m)",
+            "title": "Supplier total (US$ million)",
             "format": ",.1f"
           }
         ]
       }
     },
     {
-      "data": {
-        "values": [
-          {
-            "order": 0,
-            "label": "0–100% = share of supplier imports"
-          }
-        ]
-      },
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "max",
+              "field": "total_mil",
+              "as": "total_mil"
+            }
+          ],
+          "groupby": [
+            "partner"
+          ]
+        },
+        {
+          "calculate": "'US$' + format(datum.total_mil, ',.0f') + 'm'",
+          "as": "label"
+        }
+      ],
       "mark": {
         "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
         "fontSize": 10,
-        "color": "#75695f",
-        "baseline": "top"
+        "color": "#6e6257"
       },
       "encoding": {
-        "x": {
-          "field": "order",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -0.4,
-              2.4
-            ]
-          },
+        "y": {
+          "field": "partner",
+          "type": "nominal",
+          "sort": [
+            "China",
+            "Viet Nam",
+            "Singapore",
+            "Bangladesh",
+            "Indonesia",
+            "India",
+            "Cambodia",
+            "Italy"
+          ],
           "axis": null
         },
-        "y": {
-          "datum": -10,
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -20,
-              120
-            ]
-          },
-          "axis": null
+        "x": {
+          "datum": 1
         },
         "text": {
           "field": "label"
+        },
+        "opacity": {
+          "condition": {
+            "test": "supplier === '' || datum.partner === supplier",
+            "value": 1
+          },
+          "value": 0.28
         }
       }
     }

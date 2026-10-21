@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Chart 9 (heatmap): change in clothing and footwear prices compared with the same month a year earlier, national average of 16 states, by year and month (OpenDOSM CPI by state). Teal = cheaper, red = dearer.",
   "width": "container",
-  "height": 400,
+  "height": 430,
   "autosize": {
     "type": "fit",
     "contains": "padding",

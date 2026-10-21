@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Map 3 (flow map): Malaysia's top ten clothing and footwear trade partners in 2025 (UN Comtrade, HS chapters 61, 62, 64). Line width = value of trade. Radio buttons switch between imports and exports.",
   "width": "container",
-  "height": 520,
+  "height": 560,
   "autosize": {
     "type": "fit",
     "contains": "padding",

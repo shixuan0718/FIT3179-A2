@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Chart 10 (streamgraph): Malaysia's imports of clothing and footwear by product type, 2015 to 2025, US$ billion (UN Comtrade, HS chapters 61, 62, 64).",
   "width": "container",
-  "height": 340,
+  "height": 400,
   "autosize": {
     "type": "fit",
     "contains": "padding",

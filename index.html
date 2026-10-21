@@ -19,10 +19,10 @@
 <header class="hero">
   <div class="hero-kicker">FIT3179 &middot; Topic 8: Fashion and Clothing &middot; Monash Malaysia</div>
   <h1>Stitched Economy</h1>
-  <p class="hero-sub">Which fashion products arrive in Malaysia, who supplies them, and how the mix and retail seasons change.</p>
+  <p class="hero-sub">What Malaysia buys, who supplies it, and how prices and shopping seasons change.</p>
   <div class="hero-grid">
     <div>
-      <p class="lede">Fashion shopping starts with products: knitted apparel, woven apparel and footwear. Discover who supplies them, how their import mix changed from 2015 to 2025, and when activity rises in fashion-related retail stores. State incomes and clothing prices provide context. These trade figures describe market supply, not a survey of individual shoppers. Hover over the charts to investigate the data.</p>
+      <p class="lede">This story follows three fashion product groups&mdash;knitted apparel, woven apparel and footwear. It shows who supplies them, how the mix changed since 2015, and when fashion-related retail is busiest. Hover for details.</p>
       <div class="hero-stats">
         <div><b>3</b><span>fashion product groups</span></div>
         <div><b>2015&ndash;25</b><span>changes in product mix</span></div>
@@ -36,7 +36,7 @@
         <dt>Price index (CPI)</dt><dd>A number that tracks what a typical basket of goods costs. If it moves from 100 to 110, prices rose 10%.</dd>
         <dt>Imports and exports</dt><dd>Imports are goods Malaysia buys from other countries. Exports are goods it sells to them.</dd>
         <dt>Knitted and woven apparel</dt><dd>Knitted means stretchy clothes such as T-shirts, jumpers and socks. Woven means shirts, trousers and jackets.</dd>
-        <dt>Fashion-related retail</dt><dd>MSIC group 477 includes shops selling clothing, footwear and other goods. Its monthly pattern is an indicator, not a precise total for clothes alone.</dd>
+        <dt>Fashion-related retail</dt><dd>MSIC group 477 includes clothing and footwear shops, but also some other specialised stores, so it is a proxy for fashion demand.</dd>
       </dl>
     </aside>
   </div>
@@ -46,27 +46,27 @@
 
 <section class="section" id="s1">
   <div class="section-heading"><span>01</span><div><p>Fashion around the map</p><h2>Where do Malaysia&rsquo;s fashion products come from?</h2></div></div>
-  <p class="section-copy">Import hotspots reveal which partners send Malaysia the most knitted apparel, woven apparel and footwear. Two Malaysian maps then put these products into context: clothing price changes and the different budgets households have available.</p>
+  <p class="section-copy">Start with the map: who supplies Malaysia, where prices changed, and where household budgets are strongest.</p>
   <figure class="card wide-map">
     <h3>Which countries supply the most fashion imports?</h3>
-    <p class="how"><b>How to read:</b> each circle is a country supplying Malaysia in 2025. Bigger circles mean more US dollars of imported clothing and footwear; colours show each supplier&rsquo;s largest apparel or footwear category. Hover for values and categories.</p>
+    <p class="how"><b>Read:</b> bigger circles mean more imports; colour shows each supplier&rsquo;s main product type.</p>
     <div id="map4" class="vis" role="img" aria-label="World proportional symbol map of the 10 leading apparel and footwear suppliers to Malaysia in 2025. Circle area shows import value and colour shows the dominant product group."></div>
-    <figcaption class="annotation"><b>Asia dominates the supplier map.</b> The ten largest named partners account for 91% of Malaysia&rsquo;s US$3.33 billion in apparel and footwear imports. China leads at US$1.18 billion; the colours also show which product group matters most to each supplier.</figcaption>
+    <figcaption class="annotation"><b>Asia dominates.</b> China is the main supplier, followed by Viet Nam, Singapore and Bangladesh.</figcaption>
     <a class="spec" href="specs/map4_proportional.vl.json">View chart code (JSON)</a>
   </figure>
   <div class="grid two">
     <figure class="card">
       <h3>Are clothes getting dearer where you live?</h3>
-      <p class="how"><b>How to read:</b> each state is coloured by how much clothing and footwear prices changed in the 12 months to August 2026. Teal means cheaper; red means dearer.</p>
+      <p class="how"><b>Read:</b> teal means clothing got cheaper over the year; red means it got dearer.</p>
       <div id="map1" class="vis" role="img" aria-label="Map of Malaysian states coloured by the change in clothing prices over the last year. 9 areas saw prices fall, 6 saw them rise."></div>
-      <figcaption class="annotation"><b>Prices are barely moving.</b> 9 of the 16 areas saw clothes get cheaper, 6 saw them get dearer and 1 stayed flat. The biggest fall was in Labuan (−3.3%) and the biggest rise in Selangor (+1.6%).</figcaption>
+      <figcaption class="annotation"><b>Price changes are small.</b> Labuan fell most (−3.3%) and Selangor rose most (+1.6%).</figcaption>
       <a class="spec" href="specs/map1_choropleth.vl.json">View chart code (JSON)</a>
     </figure>
     <figure class="card">
-      <h3>How much do household budgets differ?</h3>
-      <p class="how"><b>How to read:</b> each square is one state, laid out roughly like the real map so small places such as Kuala Lumpur are as easy to see as Sarawak. Darker means a higher average household income.</p>
+      <h3>Who has the money to spend?</h3>
+      <p class="how"><b>Read:</b> darker tiles mean higher monthly household income.</p>
       <div id="map2" class="vis" role="img" aria-label="Tile map of average monthly household income by state in 2024. Kuala Lumpur is highest at RM13,985; Kelantan is lowest at RM5,265."></div>
-      <figcaption class="annotation"><b>Incomes are far from equal.</b> The average household in Kuala Lumpur earns RM13,985 a month, 2.7 times the RM5,265 earned in Kelantan.</figcaption>
+      <figcaption class="annotation"><b>Budgets differ sharply.</b> Kuala Lumpur is highest; Kelantan is lowest.</figcaption>
       <a class="spec" href="specs/map2_tilegrid.vl.json">View chart code (JSON)</a>
     </figure>
   </div>
@@ -75,36 +75,36 @@
 
 <section class="section" id="s2">
   <div class="section-heading"><span>02</span><div><p>Fashion products and suppliers</p><h2>Which types of clothes and footwear does Malaysia trade?</h2></div></div>
-  <p class="section-copy">Compare product categories, the suppliers behind them, and the gap between imports and exports. These trade values describe Malaysia&rsquo;s market supply, not individual shoppers&rsquo; preferences.</p>
+  <p class="section-copy">Now compare product categories, supplier countries and the gap between what Malaysia buys and sells.</p>
   <figure class="card wide-map">
     <h3>Where do our clothes come from?</h3>
-    <p class="how"><b>How to read:</b> each curved line joins Malaysia to one of its ten biggest trading partners for clothing and footwear in 2025. A thicker line means more money changed hands. Use the buttons to switch between what we buy and what we sell.</p>
+    <p class="how"><b>Read:</b> thicker lines mean more trade; switch between imports and exports.</p>
     <div id="map3" class="vis" role="img" aria-label="World map with lines from Malaysia to its top ten partners for clothing and footwear. China is the biggest source of imports; the United States is the biggest export market."></div>
-    <figcaption class="annotation"><b>One country dominates what we buy.</b> China supplied US$1,183 million in 2025, 36% of all imported clothing and footwear. The biggest export customer is the United States (US$479 million, about a fifth of exports).</figcaption>
+    <figcaption class="annotation"><b>Trade is lopsided.</b> China is the main import source, while the United States is the biggest export destination.</figcaption>
     <a class="spec" href="specs/map3_flow.vl.json">View chart code (JSON)</a>
   </figure>
   <div class="picker"><label for="catSelect">Follow one product type through the trade charts:</label>
     <select id="catSelect"><option value="All">All products</option><option value="Knitted apparel">Knitted apparel</option><option value="Woven apparel">Woven apparel</option><option value="Footwear">Footwear</option></select></div>
   <figure class="card wide-map">
     <h3>What do we import, and from whom?</h3>
-    <p class="how"><b>How to read:</b> the bigger the block, the more Malaysia spent importing that product from that country in 2025. Colours show the type of product; each block inside is one exporting country.</p>
+    <p class="how"><b>Read:</b> bigger blocks mean more imports in 2025; colour shows product type.</p>
     <div id="chart5" class="vis" role="img" aria-label="Treemap of 2025 clothing and footwear imports by product type and exporting country. Knitted apparel is the largest group and China is the largest supplier in every group."></div>
-    <figcaption class="annotation"><b>Knitted clothing is more than half the bill.</b> It makes up 52% of imports (US$1,745 million of US$3,330 million), and China is the biggest supplier of every product type.</figcaption>
+    <figcaption class="annotation"><b>Knitted apparel leads.</b> It makes up just over half of the 2025 import bill.</figcaption>
     <a class="spec" href="specs/chart5_treemap.vega.json">View chart code (JSON)</a>
   </figure>
   <div class="grid two">
     <figure class="card">
       <h3>How do suppliers specialise in different fashion products?</h3>
-      <p class="how"><b>How to read:</b> each line is one of the eight biggest named suppliers. The three upright scales show what percentage of that country&rsquo;s 2025 apparel and footwear shipments to Malaysia belongs to knitted apparel, woven apparel or footwear. The three percentages add to 100%. Hover on a line to identify the supplier.</p>
+      <p class="how"><b>Read:</b> each bar is one supplier; the segments show its product mix.</p>
       <div id="chart6" class="vis" role="img" aria-label="Parallel coordinates comparing knitted, woven and footwear shares of imports from the eight leading supplier countries in 2025."></div>
-      <figcaption class="annotation"><b>Specialisation differs sharply.</b> Knitted apparel makes up 83% of the imports from Bangladesh, while footwear represents about 47% of Indonesia&rsquo;s shipments. China remains the largest supplier overall, but its product mix is more balanced.</figcaption>
+      <figcaption class="annotation"><b>Suppliers specialise.</b> Bangladesh is heavily knitted-apparel-based, while Indonesia leans most toward footwear.</figcaption>
       <a class="spec" href="specs/chart6_parallel_coordinates.vl.json">View chart code (JSON)</a>
     </figure>
     <figure class="card">
       <h3>Do we buy more than we sell?</h3>
-      <p class="how"><b>How to read:</b> orange bars pointing left show what Malaysia buys from other countries; green bars pointing right show what it sells. The line in the middle is zero.</p>
+      <p class="how"><b>Read:</b> imports go left, exports go right.</p>
       <div id="chart7" class="vis short" role="img" aria-label="Diverging bars of 2025 imports and exports for knitted apparel, woven apparel and footwear. Footwear imports are about 2.8 times exports."></div>
-      <figcaption class="annotation"><b>Footwear shows the biggest gap.</b> We import 2.8 times more shoes (US$796 million) than we export (US$285 million). For knitted clothing the two are nearly level (US$1,745 million in, US$1,642 million out). Overall, Malaysia imports US$3.3 billion and exports US$2.3 billion.</figcaption>
+      <figcaption class="annotation"><b>Footwear has the biggest deficit.</b> Malaysia imports far more shoes than it exports.</figcaption>
       <a class="spec" href="specs/chart7_diverging_bar.vl.json">View chart code (JSON)</a>
     </figure>
   </div>
@@ -112,50 +112,50 @@
 
 <section class="section" id="s3">
   <div class="section-heading"><span>03</span><div><p>Rhythms and shifts</p><h2>When does fashion retail rise, and what changes over time?</h2></div></div>
-  <p class="section-copy">Retail activity varies across the months, while imported product categories evolve over the years. The retail series includes some non-fashion products, and the import mix tracks what enters the market rather than directly measuring personal preferences.</p>
+  <p class="section-copy">This section shows seasonality, monthly price movement and how the import mix changed from 2015 to 2025.</p>
   <div class="grid wide-right">
     <figure class="card">
-      <h3>Which months are busiest for fashion-related retail?</h3>
-      <p class="how"><b>How to read:</b> the circle is a year, starting with January at the top and running clockwise. Bars pointing outward beat a typical month (the dashed ring); bars pointing inward fall short of it. Yearly growth has been removed so that only the seasons remain.</p>
+      <h3>Which months are busiest for clothes shops?</h3>
+      <p class="how"><b>Read:</b> bars outside the ring are above a typical month; bars inside are below.</p>
       <div id="chart8" class="vis" role="img" aria-label="Radial bar chart of monthly sales for shops selling clothing, footwear and other goods, averaged over 2023 to 2025. December is highest at +2.4%, April is +1.3%, and July is lowest at −2.2%."></div>
-      <figcaption class="annotation"><b>The swings are small.</b> December is the busiest month (+2.4%) and July the quietest (−2.2%). April (+1.3%) may be a Hari Raya effect, but the festival moves about 11 days earlier each year, which blurs the bump. These shops sell clothing, footwear and some other goods, so this is only a guide to fashion.</figcaption>
+      <figcaption class="annotation"><b>Seasonality is modest.</b> December is strongest and July is weakest.</figcaption>
       <a class="spec" href="specs/chart8_radial_bar.vl.json">View chart code (JSON)</a>
     </figure>
     <figure class="card">
       <h3>Are clothes still getting cheaper?</h3>
-      <p class="how"><b>How to read:</b> each square is one month. Its colour shows how much clothing and footwear prices changed compared with the same month a year earlier (the average of all 16 states). Teal means cheaper; red means dearer. Hover for the exact figure.</p>
+      <p class="how"><b>Read:</b> teal means cheaper than a year earlier; red means dearer.</p>
       <div id="chart9" class="vis" role="img" aria-label="Heatmap of clothing price change by month from 2020 to 2026. Prices were falling fastest in early 2020, the fall almost stopped in 2022 and 2023, then returned in 2024."></div>
-      <figcaption class="annotation"><b>The price fall has faded but not vanished.</b> Clothes were getting 1.4% cheaper a year in early 2020. The fall almost stopped in 2022 and 2023, then returned in 2024 (down to −0.8% by December).</figcaption>
+      <figcaption class="annotation"><b>The fall faded, then returned.</b> The sharpest price drops were in 2020.</figcaption>
       <a class="spec" href="specs/chart9_heatmap.vl.json">View chart code (JSON)</a>
     </figure>
   </div>
   <figure class="card wide">
-    <h3>How has Malaysia&rsquo;s apparel and footwear import mix changed?</h3>
-    <p class="how"><b>How to read:</b> each coloured stream is a type of product. The thicker the stream in a year, the more Malaysia spent importing it. The streams wiggle around a centre line, so compare thickness, not height.</p>
+    <h3>How much have we imported over the years?</h3>
+    <p class="how"><b>Read:</b> thicker streams mean larger import value.</p>
     <div id="chart10" class="vis" role="img" aria-label="Streamgraph of clothing and footwear imports from 2015 to 2025. Imports dip in 2020 and reach a record in 2025."></div>
-    <figcaption class="annotation"><b>The product mix changed as imports grew.</b> Knitted apparel rose from 47% of the selected product imports in 2015 to 52% in 2025; woven apparel fell from 31% to 24%. Total imports fell 28% in 2020 and reached US$3.3 billion in 2025. These are trade trends, not direct measurements of consumer preference.</figcaption>
+    <figcaption class="annotation"><b>Imports dipped, then surged.</b> 2020 was the low point; 2025 was a record year.</figcaption>
     <a class="spec" href="specs/chart10_streamgraph.vl.json">View chart code (JSON)</a>
   </figure>
 </section>
 
 <section class="section finale" id="s4">
   <div class="section-heading"><span>04</span><div><p>The price story</p><h2>Is fashion getting more affordable?</h2></div></div>
-  <p class="section-copy">Fashion-related retail, import categories and consumer budgets tell different parts of the story. One striking price context is that clothing and footwear prices fell while the wider cost of living rose.</p>
+  <p class="section-copy">The final chart compares clothing prices with the broader cost of living.</p>
   <div class="grid wide-left">
     <figure class="card">
       <h3>Clothing prices versus the price of everything</h3>
-      <p class="how"><b>How to read:</b> both lines start at 100 in January 2010. A line at 120 means prices are 20% higher than then. Hover over the chart to compare any month.</p>
+      <p class="how"><b>Read:</b> both lines start at 100 in January 2010.</p>
       <div id="chart11" class="vis" role="img" aria-label="Line chart of unweighted state and territory averages from 2010 to 2026, with all-items CPI rising around 35% and clothing/footwear CPI falling around 12%."></div>
-      <figcaption class="annotation"><b>Across unweighted state/territory series, the all-items CPI is about 35% above January 2010, but clothing and footwear CPI about 12% below.</b> This compares price-index trends; it is not an official national CPI.</figcaption>
+      <figcaption class="annotation"><b>Clothing moved the other way.</b> Overall prices rose, but clothing and footwear prices fell.</figcaption>
       <a class="spec" href="specs/chart11_line.vl.json">View chart code (JSON)</a>
     </figure>
     <aside class="takeaway">
       <span>What to take away</span>
       <ol>
-        <li><b>Products:</b> knitted apparel represents about 52% of the selected 2025 import bill, up from 47% in 2015.</li>
-        <li><b>Suppliers:</b> China accounts for about 36% of the selected imports, but supplier product mixes differ sharply.</li>
-        <li><b>Retail:</b> the broad MSIC 477 monthly pattern is modest, with December around 2.4% above a typical month.</li>
-        <li><b>Prices:</b> across the unweighted state series, clothing and footwear CPI has fallen relative to 2010, unlike the overall CPI. This is context, not evidence of preference.</li>
+        <li><b>Products:</b> knitted apparel is the largest import category.</li>
+        <li><b>Suppliers:</b> China is the dominant source, but supplier mixes differ.</li>
+        <li><b>Retail:</b> seasonal swings are modest, with December on top.</li>
+        <li><b>Prices:</b> clothing got cheaper relative to the wider basket.</li>
       </ol>
     </aside>
   </div>
@@ -165,9 +165,9 @@
   <h2>About this visualisation</h2>
   <div class="method-grid">
     <div><b>Who</b><p>Designed for the average Malaysian reader, with plain-language labels and no statistics knowledge assumed.</p></div>
-    <div><b>What</b><p>UN Comtrade HS 61 (knitted apparel), HS 62 (woven apparel) and HS 64 (footwear), combined with OpenDOSM retail and clothing CPI data and household-budget context, plus geographic boundaries.</p></div>
-    <div><b>Why</b><p>To compare apparel and footwear categories, show how the available product mix changes over time, and describe seasonal retail activity for Malaysian readers. Imports are a market-supply proxy, not a survey of individual preferences.</p></div>
-    <div><b>How</b><p>Four map idioms show supplier geography and price/budget context; a treemap and parallel coordinates compare fashion categories and suppliers; radial, heatmap, streamgraph and line charts reveal seasonal and long-term patterns.</p></div>
+    <div><b>What</b><p>UN Comtrade trade data, OpenDOSM retail and clothing-price series, household-income context and map boundaries.</p></div>
+    <div><b>Why</b><p>To show product mix, supplier structure, seasonality and price change in Malaysia&rsquo;s fashion market.</p></div>
+    <div><b>How</b><p>Maps show geography; the treemap and bars compare categories; radial, heatmap, streamgraph and line charts show change over time.</p></div>
   </div>
 </section>
 </main>
@@ -192,7 +192,7 @@
         <li>Maps: simplified Malaysia state boundary file supplied by the author (Sabah, Sarawak and Labuan placed at their true positions); <a href="https://github.com/topojson/world-atlas">world-atlas</a> (Natural Earth, public domain).</li>
       </ul>
       <h3>Notes and limits</h3>
-      <p>Household income is included as market context, not clothing spending. Group 477 shops also sell goods other than fashion. Import category values and supplier shares represent goods entering Malaysia, not observed customer choices or preferences. State price figures are unweighted averages of 16 states and territories, not an official national index. Seasonal figures use 2023–2025 with year-level growth removed. The ten top supplier map points cover 91% of 2025 imports in the three selected chapters; 2025 Comtrade values may be revised.</p>
+      <p>Household income is context, not clothing spending. Group 477 is a retail proxy, not a pure fashion series. Trade values show market supply, not individual preference. State price figures are unweighted averages, not an official national CPI.</p>
     </div>
   </div>
 </footer>

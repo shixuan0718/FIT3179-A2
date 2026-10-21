@@ -1,0 +1,11 @@
+partner,lon,lat,total_mil,knitted_mil,woven_mil,footwear_mil,dominant,share_pct,show_label
+China,104.2,35.86,1183.4,547.1,336.0,300.3,Knitted apparel,46.2,True
+Viet Nam,108.28,14.06,493.3,227.7,65.4,200.2,Knitted apparel,46.2,True
+Singapore,103.82,1.35,381.2,242.1,68.5,70.6,Knitted apparel,63.5,True
+Bangladesh,90.36,23.69,355.6,295.2,57.0,3.5,Knitted apparel,83.0,True
+Indonesia,113.92,-0.79,196.4,72.9,31.3,92.2,Footwear,46.9,False
+India,78.96,20.59,169.9,100.4,51.8,17.8,Knitted apparel,59.1,False
+Cambodia,104.99,12.57,88.5,41.7,28.5,18.3,Knitted apparel,47.1,False
+Italy,12.57,41.87,78.8,20.6,26.2,32.0,Footwear,40.6,False
+"China, Hong Kong SAR",114.17,22.32,47.9,19.4,18.5,10.0,Knitted apparel,40.6,False
+Thailand,100.99,15.87,36.7,20.2,8.1,8.5,Knitted apparel,54.9,False
