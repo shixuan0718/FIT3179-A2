@@ -31,12 +31,11 @@
       </div>
     </div>
     <aside class="glossary">
-      <h2>Words you will meet</h2>
+      <h2>Quick guide</h2>
       <dl>
-        <dt>Price index (CPI)</dt><dd>A number that tracks what a typical basket of goods costs. If it moves from 100 to 110, prices rose 10%.</dd>
-        <dt>Imports and exports</dt><dd>Imports are goods Malaysia buys from other countries. Exports are goods it sells to them.</dd>
-        <dt>Knitted and woven apparel</dt><dd>Knitted means stretchy clothes such as T-shirts, jumpers and socks. Woven means shirts, trousers and jackets.</dd>
-        <dt>Fashion-related retail</dt><dd>MSIC group 477 includes clothing and footwear shops, but also some other specialised stores, so it is a proxy for fashion demand.</dd>
+        <dt>Knitted / woven</dt><dd>T-shirts and socks / shirts and trousers.</dd>
+        <dt>Imports / exports</dt><dd>What Malaysia buys / sells overseas.</dd>
+        <dt>Retail proxy</dt><dd>Shop data includes some non-fashion goods.</dd>
       </dl>
     </aside>
   </div>
@@ -96,7 +95,12 @@
     <figure class="card">
       <h3>How do suppliers specialise in different fashion products?</h3>
       <p class="how"><b>Read:</b> each bar is one supplier; the segments show its product mix.</p>
-      <div id="chart6" class="vis" role="img" aria-label="Parallel coordinates comparing knitted, woven and footwear shares of imports from the eight leading supplier countries in 2025."></div>
+      <div class="supplier-key" aria-label="Fashion product groups legend">
+        <span><i class="key-dot key-knit"></i>Knitted apparel</span>
+        <span><i class="key-dot key-woven"></i>Woven apparel</span>
+        <span><i class="key-dot key-footwear"></i>Footwear</span>
+      </div>
+      <div id="chart6" class="vis" role="img" aria-label="Eight labelled supplier countries, including China, Viet Nam, Singapore, Bangladesh, Indonesia, India, Cambodia and Italy, compared by 2025 shares of knitted apparel, woven apparel and footwear imports."></div>
       <figcaption class="annotation"><b>Suppliers specialise.</b> Bangladesh is heavily knitted-apparel-based, while Indonesia leans most toward footwear.</figcaption>
       <a class="spec" href="specs/chart6_parallel_coordinates.vl.json">View chart code (JSON)</a>
     </figure>

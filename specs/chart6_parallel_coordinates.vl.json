@@ -231,36 +231,26 @@
     {
       "mark": {
         "type": "bar",
-        "cornerRadius": 2
+        "cornerRadius": 0
       },
       "encoding": {
-        "y": {
-          "field": "partner",
-          "type": "nominal",
-          "sort": [
-            "China",
-            "Viet Nam",
-            "Singapore",
-            "Bangladesh",
-            "Indonesia",
-            "India",
-            "Cambodia",
-            "Italy"
-          ],
-          "title": null,
-          "axis": {
-            "labelLimit": 110
-          }
-        },
         "x": {
           "field": "share",
           "type": "quantitative",
           "stack": "zero",
-          "title": "Share of that supplier's 2025 fashion exports to Malaysia",
+          "title": "Product mix of each supplier (%)",
           "axis": {
             "format": ".0%",
             "grid": true,
-            "tickCount": 6
+            "tickCount": 5,
+            "titlePadding": 10,
+            "labelFontSize": 11
+          },
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
           }
         },
         "color": {
@@ -278,10 +268,7 @@
               "#a8884a"
             ]
           },
-          "legend": {
-            "title": null,
-            "direction": "horizontal"
-          }
+          "legend": null
         },
         "opacity": {
           "condition": {
@@ -345,23 +332,9 @@
         "color": "#6e6257"
       },
       "encoding": {
-        "y": {
-          "field": "partner",
-          "type": "nominal",
-          "sort": [
-            "China",
-            "Viet Nam",
-            "Singapore",
-            "Bangladesh",
-            "Indonesia",
-            "India",
-            "Cambodia",
-            "Italy"
-          ],
-          "axis": null
-        },
         "x": {
-          "datum": 1
+          "datum": 1,
+          "type": "quantitative"
         },
         "text": {
           "field": "label"
@@ -375,5 +348,38 @@
         }
       }
     }
-  ]
+  ],
+  "encoding": {
+    "y": {
+      "field": "partner",
+      "type": "nominal",
+      "sort": [
+        "China",
+        "Viet Nam",
+        "Singapore",
+        "Bangladesh",
+        "Indonesia",
+        "India",
+        "Cambodia",
+        "Italy"
+      ],
+      "title": null,
+      "axis": {
+        "labels": true,
+        "ticks": false,
+        "domain": false,
+        "labelFontSize": 12,
+        "labelFontWeight": 600,
+        "labelColor": "#39332f",
+        "labelLimit": 135,
+        "labelPadding": 12
+      }
+    }
+  },
+  "padding": {
+    "left": 5,
+    "right": 65,
+    "top": 8,
+    "bottom": 6
+  }
 }
